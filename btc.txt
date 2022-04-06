@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649253453939,
-  "updatedAt": 1649253468050,
+  "updatedAt": 1649254589057,
   "name": "RifeBTC",
   "id": "g0cz",
   "states": {
@@ -344,7 +344,7 @@
             "priceScaleId": "cvd-btc-spot",
             "color": "rgba(100,181,246,0.65)",
             "lineStyle": 1,
-            "lineWidth": 2,
+            "lineWidth": 1,
             "visible": true
           },
           "series": [
@@ -364,7 +364,7 @@
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242766762
+          "updatedAt": 1649254183244
         },
         "cvd-btc-perp": {
           "script": "line(cum((BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)- (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)), title=PERP)",
@@ -375,7 +375,7 @@
             "priceScaleId": "cvd-btc-perp",
             "color": "rgba(240,98,146,0.7)",
             "lineStyle": 1,
-            "lineWidth": 2
+            "lineWidth": 1
           },
           "series": [
             "cvd-btc-perp"
@@ -394,7 +394,7 @@
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242774015
+          "updatedAt": 1649254191806
         },
         "allmarkets": {
           "script": "plotline(BITFINEX:BTCUSD.close, color=transparent, title=Bitfinex.spot)\nplotline(BINANCE:btcusdt.close, color=transparent, title=Binance.spot)\nplotline(OKEX:BTC-USDT.close, color=transparent, title=Okex.spot)\nplotline(KRAKEN:XBT/USD.close, color=transparent, title=Kraken.spot)\nplotline(COINBASE:BTC-USD.close, color=transparent, title=Coinbase.spot)\nplotline(POLONIEX:USDT_BTC.close, color=transparent, title=Poloniex.spot)\nplotline(HUOBI:btcusdt.close, color=transparent, title=Huobi.spot)\nplotline(BITSTAMP:btcusd.close, color=transparent, title=Bitstamp.spot)\nplotline(BITMEX:XBTUSD.close, color=transparent, title=Bitmex.perp)\nplotline(BITFINEX:BTCF0:USTF0.close, color=transparent, title=Bitfinex.perp)\nplotline(OKEX:BTC-USD-SWAP.close, color=transparent, title=Okex.perp)\nplotline(BINANCE_FUTURES:btcusdt.close, color=transparent, title=Binance.perp)\nplotline(BINANCE_FUTURES:btcusd_perp.close, color=transparent, title=Binance.perp)\nplotline(HUOBI:BTC-USD.close, color=transparent, title=Huobi.perp)\nplotline(KRAKEN:PI_XBTUSD.close, color=transparent, title=Kraken.perp)\nplotline(DERIBIT:BTC-PERPETUAL.close, color=transparent, title=Deribit.perp)\nplotline(FTX:BTC-PERP.close, color=transparent, title=Ftx.perp)\nplotline(BYBIT:BTCUSD.close, color=transparent, title=Bybit.perp)",
@@ -729,7 +729,7 @@
           "uses": 3
         },
         "delta-spot": {
-          "script": "_vbuy = (BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+BITFINEX:BTCUSD.vbuy+BITSTAMP:btcusd.vbuy+BITSTAMP:btcusdt.vbuy+BITSTAMP:btcusdc.vbuy+COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy+FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy+HUOBI:btcusdt.vbuy+HUOBI:btcusdc.vbuy+KRAKEN:XBT/USDC.vbuy+KRAKEN:XBT/USDT.vbuy+KRAKEN:XBT/USD.vbuy+OKEX:BTC-USDT.vbuy+OKEX:BTC-USDC.vbuy+POLONIEX:USDT_BTC.vbuy+POLONIEX:USDC_BTC.vbuy)\n\n_vsell = (BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+BITFINEX:BTCUSD.vsell+BITSTAMP:btcusd.vsell+BITSTAMP:btcusdt.vsell+BITSTAMP:btcusdc.vsell+COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell+FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell+HUOBI:btcusdt.vsell+HUOBI:btcusdc.vsell+KRAKEN:XBT/USDC.vsell+KRAKEN:XBT/USDT.vsell+KRAKEN:XBT/USD.vsell+OKEX:BTC-USDT.vsell+OKEX:BTC-USDC.vsell+POLONIEX:USDT_BTC.vsell+POLONIEX:USDC_BTC.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: vbuy - vsell > 0 ? options.upColor : options.downColor}, title=Delta Spot)",
+          "script": "_vbuy = (BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+BITFINEX:BTCUSD.vbuy+BITSTAMP:btcusd.vbuy+BITSTAMP:btcusdt.vbuy+BITSTAMP:btcusdc.vbuy+COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy+FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy+HUOBI:btcusdt.vbuy+HUOBI:btcusdc.vbuy+KRAKEN:XBT/USDC.vbuy+KRAKEN:XBT/USDT.vbuy+KRAKEN:XBT/USD.vbuy+OKEX:BTC-USDT.vbuy+OKEX:BTC-USDC.vbuy+POLONIEX:USDT_BTC.vbuy+POLONIEX:USDC_BTC.vbuy)\n\n_vsell = (BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+BITFINEX:BTCUSD.vsell+BITSTAMP:btcusd.vsell+BITSTAMP:btcusdt.vsell+BITSTAMP:btcusdc.vsell+COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell+FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell+HUOBI:btcusdt.vsell+HUOBI:btcusdc.vsell+KRAKEN:XBT/USDC.vsell+KRAKEN:XBT/USDT.vsell+KRAKEN:XBT/USD.vsell+OKEX:BTC-USDT.vsell+OKEX:BTC-USDC.vsell+POLONIEX:USDT_BTC.vsell+POLONIEX:USDC_BTC.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Delta Spot)",
           "id": "delta-spot",
           "name": "Delta Spot",
           "priceScaleId": "delta-spot",
@@ -739,7 +739,7 @@
             "downColor": "rgb(236,64,122)"
           },
           "series": [
-            "delta-spot"
+            "delta-spot2"
           ],
           "displayName": "Delta Spot",
           "unsavedChanges": false,
@@ -749,14 +749,14 @@
               "position",
               "colors"
             ],
-            "tab": "#options",
+            "tab": "#script",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649249763691
+          "updatedAt": 1649254515521
         },
         "delta-perps": {
-          "script": "_vbuy = (BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)\n\n_vsell = (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: vbuy - vsell > 0 ? options.upColor : options.downColor}, title=Delta Perps)",
+          "script": "_vbuy = (BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)\n\n_vsell = (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Delta Perps)",
           "id": "delta-perps",
           "name": "Delta Perps",
           "priceScaleId": "delta-perps",
@@ -766,7 +766,7 @@
             "downColor": "rgb(239,83,80)"
           },
           "series": [
-            "delta-perps"
+            "delta-perps2"
           ],
           "displayName": "Delta Perps",
           "unsavedChanges": false,
@@ -780,7 +780,7 @@
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649249780206
+          "updatedAt": 1649254526543
         }
       },
       "priceScales": {
@@ -1011,7 +1011,7 @@
         "FTX:BTC/USDT": false,
         "COINBASE:BTC-USDT": false
       },
-      "barSpacing": 4.771789060811715,
+      "barSpacing": 6.469897263512669,
       "_id": "chart"
     },
     "liquidations": {
@@ -1283,7 +1283,7 @@
         {
           "id": "threshold",
           "amount": 50000,
-          "buyColor": "rgb(0,39,40)",
+          "buyColor": "rgb(0,19,20)",
           "sellColor": "rgb(30,0,15)",
           "buyAudio": "play(659.26, gain / 10, 0.1 + gain / 7)",
           "sellAudio": "play(493.88, gain * 1.5 / 10, 0.1 + gain / 7)",
@@ -1292,7 +1292,7 @@
         {
           "id": "significant",
           "amount": 300000,
-          "buyColor": "rgb(0,69,71)",
+          "buyColor": "rgb(0,50,51)",
           "sellColor": "rgb(65,0,33)",
           "buyAudio": "play(659.26, 0.05 + gain / 10, 0.2 + ratio * 0.23,0,,0);\nplay(830.6, 0.05 + gain / 10, 0.2 + ratio * 0.23, 0.08,,0)",
           "sellAudio": "play(493.88, 0.05 + gain * 1.5 / 10, 0.2 + ratio * 0.23,0,,0);\nplay(392, 0.05 + gain * 1.5 / 10, 0.2 + ratio * 0.23, 0.08,,0)"
