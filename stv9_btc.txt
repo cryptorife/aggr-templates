@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649233183520,
-  "updatedAt": 1649246103465,
+  "updatedAt": 1649247346086,
   "name": "BTC",
   "id": "stv9",
   "states": {
@@ -128,15 +128,15 @@
           "i": "liquidations",
           "type": "trades",
           "x": 21,
-          "y": 16,
+          "y": 18,
           "w": 3,
-          "h": 8,
+          "h": 7,
           "moved": false
         },
         {
           "i": "stats",
           "type": "stats",
-          "y": 14,
+          "y": 16,
           "x": 21,
           "w": 3,
           "h": 2,
@@ -148,7 +148,7 @@
           "y": 0,
           "x": 21,
           "w": 3,
-          "h": 14,
+          "h": 16,
           "moved": false
         },
         {
@@ -309,19 +309,19 @@
             "priceLineVisible": false,
             "lastValueVisible": true,
             "borderVisible": true,
-            "upColor": "rgba(255,255,255,0.9)",
+            "upColor": "rgba(255,255,255,0.76)",
             "downColor": "rgb(0,0,0)",
-            "borderUpColor": "rgba(138,141,139,0.81)",
-            "borderDownColor": "rgba(145,145,145,0.85)",
-            "wickUpColor": "rgba(147,147,147,0.83)",
-            "wickDownColor": "rgba(166,159,160,0.84)",
+            "borderUpColor": "rgba(138,141,139,0.69)",
+            "borderDownColor": "rgba(145,145,145,0.73)",
+            "wickUpColor": "rgba(147,147,147,0.7)",
+            "wickDownColor": "rgba(166,159,160,0.72)",
             "visible": true
           },
           "id": "price",
           "createdAt": 1648450392186,
-          "updatedAt": 1649233448596,
+          "updatedAt": 1649247094510,
           "series": [
-            "price"
+            "price6"
           ],
           "unsavedChanges": false,
           "navigationState": {
@@ -474,16 +474,16 @@
           "priceScaleId": "cvd-bitfinex-spot",
           "options": {
             "priceScaleId": "cvd-bitfinex-spot2",
-            "color": "rgb(76,175,80)",
+            "color": "rgb(56,142,60)",
             "visible": true
           },
           "series": [
-            "cvd-bitfinex-spot2"
+            "cvd-bitfinex-spot22"
           ],
           "displayName": "CVD Bitfinex Spot",
           "unsavedChanges": false,
           "createdAt": 1649239230058,
-          "updatedAt": 1649241297821,
+          "updatedAt": 1649246959530,
           "navigationState": {
             "sections": [
               "position",
@@ -641,24 +641,25 @@
           "priceScaleId": "cvd-bybit-perps",
           "options": {
             "priceScaleId": "cvd-bybit-perps",
-            "color": "rgb(255,238,88)",
+            "color": "rgba(255,238,88,0.5)",
             "lineStyle": 1
           },
           "series": [
-            "cvd-bybit-perps"
+            "cvd-bybit-perps2"
           ],
           "displayName": "CVD Bybit Perps",
           "unsavedChanges": false,
           "createdAt": 1649239620556,
           "navigationState": {
             "sections": [
-              "position"
+              "position",
+              "colors"
             ],
             "tab": 0,
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649241391423
+          "updatedAt": 1649247330691
         },
         "cvd-bitfinex-perps": {
           "script": "line(sma(cum(BITFINEX:BTCF0:USTF0.vbuy - BITFINEX:BTCF0:USTF0.vsell), 3), title=BitfinexPerps)",
@@ -667,11 +668,11 @@
           "priceScaleId": "cvd-bitfinex-perps",
           "options": {
             "priceScaleId": "cvd-bitfinex-perps",
-            "color": "rgb(76,175,80)",
+            "color": "rgb(56,142,60)",
             "lineStyle": 1
           },
           "series": [
-            "cvd-bitfinex-perps"
+            "cvd-bitfinex-perps2"
           ],
           "displayName": "CVD Bitfinex Perps",
           "unsavedChanges": false,
@@ -685,7 +686,7 @@
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649241406985
+          "updatedAt": 1649246947793
         },
         "perps-premium": {
           "script": "perpAvg = (BYBIT:BTCUSD.close + FTX:BTC-PERP.close + BITMEX:XBTUSD.close + BINANCE_FUTURES:btcusd_perp.close) / 4\n\nspotAvg = (COINBASE:BTC-USD.close + BINANCE:btcusdt.close + BITFINEX:BTCUSD.close)/3\n\npremium = perpAvg - spotAvg\nbaseline = 0\n\nplotcloudarea(premium, baseline, title=PerpPrem)",
@@ -858,7 +859,7 @@
         },
         "cvd-bitfinex-spot2": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -867,7 +868,7 @@
         },
         "cvd-binance-spot": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -876,7 +877,7 @@
         },
         "cvd-coinbase": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -885,7 +886,7 @@
         },
         "cvd-ftx-spot": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0
           },
           "indicators": [
@@ -894,7 +895,7 @@
         },
         "cvd-bitmex": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -903,7 +904,7 @@
         },
         "cvd-ftx-perps": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0
           },
           "indicators": [
@@ -912,7 +913,7 @@
         },
         "cvd-binance-perps": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -921,7 +922,7 @@
         },
         "cvd-bybit-perps": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -930,7 +931,7 @@
         },
         "cvd-bitfinex-perps": {
           "scaleMargins": {
-            "top": 0.66,
+            "top": 0.68,
             "bottom": 0.02
           },
           "indicators": [
@@ -967,7 +968,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "1800",
       "refreshRate": 1000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -979,7 +980,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 4.654657590874072,
+      "barSpacing": 4.636043606461978,
       "_id": "chart"
     },
     "liquidations": {
