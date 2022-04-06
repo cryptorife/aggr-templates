@@ -1,8 +1,8 @@
 {
   "version": 5,
-  "createdAt": 1649253168160,
-  "updatedAt": 1649253318926,
-  "name": "BTC22",
+  "createdAt": 1649253453939,
+  "updatedAt": 1649253468050,
+  "name": "RifeBTC",
   "id": "g0cz",
   "states": {
     "panes": {
@@ -410,23 +410,23 @@
           "updatedAt": 1649235032209,
           "series": [
             "allmarkets",
-            "v0b1frx9",
-            "pivpkf1q",
-            "1y7vfxir",
-            "rcyt6k7y",
-            "fzb1cxw6",
-            "tmh4qf8s",
-            "bkpca89o",
-            "t6lwd5d4",
-            "vh9xtu7u",
-            "huh0zsg2",
-            "kdeo4cap",
-            "1y75pjmi",
-            "ozlu13u7",
-            "b3f93t9k",
-            "x1dbvdrs",
-            "c1hl1sbf",
-            "k7mi5ont"
+            "f9q1nr48",
+            "7b1pa3pi",
+            "vk4bx6vr",
+            "q2gbqj49",
+            "k92a1st0",
+            "3pusnu5x",
+            "edqugnf1",
+            "nd3g5xxn",
+            "dtp62ypz",
+            "8tmk991j",
+            "b9s8804c",
+            "49b6ov5j",
+            "r3dfjs80",
+            "fga8gjm6",
+            "njhi6n9n",
+            "tg15ppp1",
+            "c1bg2g4t"
           ],
           "displayName": "All markets",
           "unsavedChanges": false,
@@ -1011,7 +1011,7 @@
         "FTX:BTC/USDT": false,
         "COINBASE:BTC-USDT": false
       },
-      "barSpacing": 4.755274383748013,
+      "barSpacing": 4.771789060811715,
       "_id": "chart"
     },
     "liquidations": {
