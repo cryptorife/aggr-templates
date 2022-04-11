@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649253453939,
-  "updatedAt": 1649657806672,
+  "updatedAt": 1649658360035,
   "name": "RifeBTC",
   "id": "g0cz",
   "states": {
@@ -2466,7 +2466,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "60",
+      "timeframe": "300",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2801,7 +2801,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "60",
+      "timeframe": "300",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2983,7 +2983,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "1800",
+      "timeframe": "300",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -3676,7 +3676,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "60",
+      "timeframe": "300",
       "refreshRate": 1000,
       "showLegend": true,
       "fillGapsWithEmpty": true,
