@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649253453939,
-  "updatedAt": 1649427439066,
+  "updatedAt": 1649657806672,
   "name": "RifeBTC",
   "id": "g0cz",
   "states": {
@@ -1320,7 +1320,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -1339,7 +1340,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -1826,7 +1827,7 @@
           "uses": 1,
           "series": [
             "liquidations",
-            "ki7b68tt"
+            "i2ak8a4h"
           ],
           "displayName": "Liquidations"
         }
@@ -2089,7 +2090,7 @@
         "FTX:BTC/USDT": false,
         "COINBASE:BTC-USDT": false
       },
-      "barSpacing": 4.843818296807717,
+      "barSpacing": 4.870385031184462,
       "_id": "chart"
     },
     "stats": {
@@ -2333,7 +2334,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2352,7 +2354,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -2476,7 +2478,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 5.750599406232341,
+      "barSpacing": 5.874803980804946,
       "_id": "chart2"
     },
     "chart3": {
@@ -2490,7 +2492,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2509,7 +2512,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -2637,7 +2640,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.540856219577616,
+      "barSpacing": 3.587558531859355,
       "_id": "chart3"
     },
     "chart4": {
@@ -2651,7 +2654,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2670,7 +2674,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -2809,7 +2813,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 4.5003860823885695,
+      "barSpacing": 4.576100116491044,
       "_id": "chart4"
     },
     "chart5": {
@@ -2823,7 +2827,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2842,7 +2847,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -2990,7 +2995,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 2.5272587486513136,
+      "barSpacing": 2.5509607259013136,
       "_id": "chart5"
     },
     "chart6": {
@@ -3004,7 +3009,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -3023,7 +3029,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -3149,7 +3155,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.3387661329012084,
+      "barSpacing": 3.3802583836802045,
       "_id": "chart6"
     },
     "chart7": {
@@ -3163,7 +3169,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -3182,7 +3189,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -3209,23 +3216,23 @@
           "updatedAt": 1649328210771,
           "series": [
             "allmarkets",
-            "l0cbl9wo",
-            "h5zsxgdk",
-            "hfs21pem",
-            "lfuv22n0",
-            "vf00dcqt",
-            "e9lmv2vl",
-            "e4c8wdf5",
-            "rjh239vl",
-            "bv4wqayn",
-            "jcm3637e",
-            "ggmirsj2",
-            "dgmbrkhe",
-            "0ydrfkjl",
-            "rww256hn",
-            "886ogsmh",
-            "zronkole",
-            "rsbskpdm"
+            "xg1fvlew",
+            "5cg2rew5",
+            "nroshisn",
+            "i1u67gnn",
+            "yjhmk46w",
+            "lapff5if",
+            "jmfjbrhg",
+            "rfj1ccxj",
+            "4drs4x4h",
+            "lwzfk9zx",
+            "ukiknt9k",
+            "v7aavxda",
+            "81gn599p",
+            "0i58gutf",
+            "xg2g1fcy",
+            "93vi7fqj",
+            "ufv31kky"
           ],
           "displayName": "All markets",
           "unsavedChanges": false,
@@ -3333,7 +3340,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 139.01264136060288,
+      "barSpacing": 268.02919708029214,
       "_id": "chart7"
     },
     "chart8": {
@@ -3347,7 +3354,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -3366,7 +3374,7 @@
           "series": [
             "price"
           ],
-          "unsavedChanges": false,
+          "unsavedChanges": true,
           "navigationState": {
             "sections": [
               "position",
@@ -3390,7 +3398,7 @@
             "visible": true
           },
           "series": [
-            "delta-binance-spot2"
+            "delta-binance-spot"
           ],
           "displayName": "Delta Binance Spot",
           "navigationState": {
@@ -3558,7 +3566,7 @@
             "downColor": "rgb(233,30,99)"
           },
           "series": [
-            "delta-bitfinex-spot6"
+            "delta-bitfinex-spot"
           ],
           "displayName": "Delta BitFinex Spot",
           "unsavedChanges": false,
@@ -3680,7 +3688,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 2.119085978370608,
+      "barSpacing": 3.7408736979545107,
       "_id": "chart8"
     }
   }
