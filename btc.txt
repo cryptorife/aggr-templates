@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649253453939,
-  "updatedAt": 1649658360035,
+  "updatedAt": 1649854304980,
   "name": "RifeBTC",
   "id": "g0cz",
   "states": {
@@ -1227,6 +1227,7 @@
       "favoriteTimeframes": {
         "60": "1m",
         "300": "5m",
+        "900": "15m",
         "1800": "30m",
         "3600": "1h",
         "14400": "4h"
@@ -1320,8 +1321,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -1827,7 +1828,7 @@
           "uses": 1,
           "series": [
             "liquidations",
-            "i2ak8a4h"
+            "whqlpfmd"
           ],
           "displayName": "Liquidations"
         }
@@ -2090,7 +2091,7 @@
         "FTX:BTC/USDT": false,
         "COINBASE:BTC-USDT": false
       },
-      "barSpacing": 4.870385031184462,
+      "barSpacing": 2.722932534075132,
       "_id": "chart"
     },
     "stats": {
@@ -2334,8 +2335,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2422,6 +2423,34 @@
           },
           "updatedAt": 1649242198712,
           "uses": 1
+        },
+        "cvd-deribit": {
+          "script": "plotline(sma(cum((DERIBIT:BTC-PERPETUAL.vbuy) - (DERIBIT:BTC-PERPETUAL.vsell)), 3), title=Deribit)",
+          "id": "cvd-deribit",
+          "name": "CVD Deribit",
+          "priceScaleId": "cvd-deribit",
+          "options": {
+            "priceScaleId": "cvd-deribit",
+            "color": "rgb(129,199,132)",
+            "lineStyle": 1
+          },
+          "series": [
+            "cvd-deribit"
+          ],
+          "displayName": "CVD Deribit",
+          "unsavedChanges": false,
+          "createdAt": 1649679589874,
+          "navigationState": {
+            "sections": [
+              "position",
+              "colors",
+              "defaultOptions"
+            ],
+            "tab": "#script",
+            "optionsQuery": "",
+            "fontSize": 1
+          },
+          "updatedAt": 1649679643925
         }
       },
       "priceScales": {
@@ -2463,10 +2492,16 @@
           "indicators": [
             "CVD BitMex"
           ]
+        },
+        "cvd-deribit": {
+          "scaleMargins": {
+            "top": 0.1,
+            "bottom": 0.2
+          }
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": 900,
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2478,7 +2513,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 5.874803980804946,
+      "barSpacing": 3.7530345753146164,
       "_id": "chart2"
     },
     "chart3": {
@@ -2492,8 +2527,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2628,7 +2663,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "900",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2640,7 +2675,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.587558531859355,
+      "barSpacing": 3.7494236256175726,
       "_id": "chart3"
     },
     "chart4": {
@@ -2654,8 +2689,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2801,7 +2836,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "900",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2813,7 +2848,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 4.576100116491044,
+      "barSpacing": 4.815630637367516,
       "_id": "chart4"
     },
     "chart5": {
@@ -2827,8 +2862,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -2983,7 +3018,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "900",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2995,7 +3030,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 2.5509607259013136,
+      "barSpacing": 3.4638484990279914,
       "_id": "chart5"
     },
     "chart6": {
@@ -3009,8 +3044,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -3143,7 +3178,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "900",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -3155,7 +3190,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.3802583836802045,
+      "barSpacing": 5.6050823371309075,
       "_id": "chart6"
     },
     "chart7": {
@@ -3169,8 +3204,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -3216,23 +3251,23 @@
           "updatedAt": 1649328210771,
           "series": [
             "allmarkets",
-            "xg1fvlew",
-            "5cg2rew5",
-            "nroshisn",
-            "i1u67gnn",
-            "yjhmk46w",
-            "lapff5if",
-            "jmfjbrhg",
-            "rfj1ccxj",
-            "4drs4x4h",
-            "lwzfk9zx",
-            "ukiknt9k",
-            "v7aavxda",
-            "81gn599p",
-            "0i58gutf",
-            "xg2g1fcy",
-            "93vi7fqj",
-            "ufv31kky"
+            "376pkqh1",
+            "wvgq1auq",
+            "grvlliqv",
+            "8wjv90mo",
+            "beow39xr",
+            "83lh20ev",
+            "bmgwkszj",
+            "hn6zsew6",
+            "gdftxyog",
+            "st6k8dmn",
+            "mljcac02",
+            "ojy409zt",
+            "acb1j3cw",
+            "n2pq2iy8",
+            "0lzcl8xj",
+            "i9egmz73",
+            "xh3xiuk6"
           ],
           "displayName": "All markets",
           "unsavedChanges": false,
@@ -3340,7 +3375,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 268.02919708029214,
+      "barSpacing": 11.949302789219141,
       "_id": "chart7"
     },
     "chart8": {
@@ -3354,8 +3389,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 2,
-              "minMove": 0.01
+              "precision": 1,
+              "minMove": 0.1
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -3688,7 +3723,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.7408736979545107,
+      "barSpacing": 3.482531194159772,
       "_id": "chart8"
     }
   }
