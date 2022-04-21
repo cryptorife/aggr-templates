@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649253453939,
-  "updatedAt": 1650522362372,
+  "updatedAt": 1650523754042,
   "name": "RifeBTC",
   "id": "g0cz",
   "states": {
@@ -1398,11 +1398,11 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors",
               "format",
-              "defaultOptions"
+              "defaultOptions",
+              "colors"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
@@ -1494,7 +1494,7 @@
             "length": 7
           },
           "series": [
-            "delta-spot10"
+            "delta-spot15"
           ],
           "displayName": "Delta Spot",
           "unsavedChanges": false,
@@ -1510,7 +1510,7 @@
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1650521195259
+          "updatedAt": 1650522662157
         },
         "delta-perps": {
           "script": "_vbuy = (BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)\n\n_vsell = (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Perps\")",
@@ -3148,7 +3148,9 @@
       "_id": "chart7"
     },
     "chart8": {
-      "indicatorsErrors": {},
+      "indicatorsErrors": {
+        "delta-binance-spot": null
+      },
       "indicators": {
         "price": {
           "enabled": true,
@@ -3191,7 +3193,7 @@
           "uses": 1
         },
         "delta-binance-spot": {
-          "script": "_vbuy = (BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy)\n\n_vsell = (BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Binance Spot)",
+          "script": "_vbuy = (BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy)\n\n_vsell = (BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Binance Spot\")",
           "id": "delta-binance-spot",
           "name": "Delta Binance Spot",
           "priceScaleId": "delta-binance-spot",
@@ -3199,27 +3201,33 @@
             "priceScaleId": "delta-binance-spot",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(233,30,99)",
-            "visible": true
+            "visible": true,
+            "length": 7,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)"
           },
           "series": [
-            "delta-binance-spot"
+            "delta-binance-spot15"
           ],
           "displayName": "Delta Binance Spot",
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "scriptOptions"
             ],
-            "tab": 0,
+            "tab": "#script",
             "optionsQuery": "",
             "fontSize": 1
           },
           "unsavedChanges": false,
           "createdAt": 1649330197719,
-          "updatedAt": 1649330243426
+          "updatedAt": 1650523110966
         },
         "delta-coinbase": {
-          "script": "_vbuy = (COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy)\n\n_vsell = (COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Coinbase)",
+          "script": "_vbuy = (COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy)\n\n_vsell = (COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Coinbase\")",
           "id": "delta-coinbase",
           "name": "Delta Coinbase",
           "priceScaleId": "delta-coinbase",
@@ -3228,10 +3236,15 @@
             "color": "rgb(0,150,136)",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(233,30,99)",
-            "visible": true
+            "visible": true,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
           },
           "series": [
-            "delta-coinbase"
+            "delta-coinbase8"
           ],
           "displayName": "Delta Coinbase",
           "unsavedChanges": false,
@@ -3239,16 +3252,18 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "scriptOptions",
+              "defaultOptions"
             ],
             "tab": 0,
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649329759703
+          "updatedAt": 1650523498723
         },
         "delta-bybit-perps": {
-          "script": "_vbuy = (BYBIT:BTCUSD.vbuy + BYBIT:BTCUSDT.vbuy)\n\n_vsell = (BYBIT:BTCUSD.vsell + BYBIT:BTCUSDT.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Bybit)",
+          "script": "_vbuy = (BYBIT:BTCUSD.vbuy + BYBIT:BTCUSDT.vbuy)\n\n_vsell = (BYBIT:BTCUSD.vsell + BYBIT:BTCUSDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Bybit\")",
           "id": "delta-bybit-perps",
           "name": "Delta Bybit Perps",
           "priceScaleId": "delta-bybit-perps",
@@ -3256,19 +3271,25 @@
             "priceScaleId": "delta-bybit-perps",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(233,30,99)",
-            "visible": true
+            "visible": true,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
           },
           "series": [
-            "delta-bybit-perps"
+            "delta-bybit-perps8"
           ],
           "displayName": "Delta Bybit Perps",
           "unsavedChanges": false,
           "createdAt": 1649328916470,
-          "updatedAt": 1649329700130,
+          "updatedAt": 1650523515722,
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "scriptOptions"
             ],
             "tab": 0,
             "optionsQuery": "",
@@ -3276,7 +3297,7 @@
           }
         },
         "delta-bitmex": {
-          "script": "_vbuy = (BITMEX:XBTUSD.vbuy)\n\n_vsell = (BITMEX:XBTUSD.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Bitmex)",
+          "script": "_vbuy = (BITMEX:XBTUSD.vbuy)\n\n_vsell = (BITMEX:XBTUSD.vsell)\n\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"BitMex\")",
           "id": "delta-bitmex",
           "name": "Delta BitMex",
           "priceScaleId": "delta-bitmex",
@@ -3284,10 +3305,15 @@
             "priceScaleId": "delta-bitmex",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(233,30,99)",
-            "visible": true
+            "visible": true,
+            "length": 7,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)"
           },
           "series": [
-            "delta-bitmex"
+            "delta-bitmex7"
           ],
           "displayName": "Delta BitMex",
           "unsavedChanges": false,
@@ -3295,16 +3321,17 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#script",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649329110364
+          "updatedAt": 1650523522434
         },
         "delta-ftx-spot": {
-          "script": "_vbuy = (FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy)\n\n_vsell = (FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=FTX Spot)",
+          "script": "_vbuy = (FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy)\n\n_vsell = (FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"FTX Spot\")",
           "id": "delta-ftx-spot",
           "name": "Delta FTX Spot",
           "priceScaleId": "delta-ftx-spot",
@@ -3312,19 +3339,25 @@
             "priceScaleId": "delta-ftx-spot",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(233,30,99)",
-            "visible": true
+            "visible": true,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
           },
           "series": [
-            "delta-ftx-spot"
+            "delta-ftx-spot9"
           ],
           "displayName": "Delta FTX Spot",
           "unsavedChanges": false,
           "createdAt": 1649329380832,
-          "updatedAt": 1649329403004,
+          "updatedAt": 1650523529915,
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "scriptOptions"
             ],
             "tab": 0,
             "optionsQuery": "",
@@ -3332,7 +3365,7 @@
           }
         },
         "delta-ftx-perps": {
-          "script": "_vbuy = (FTX:BTC-PERP.vbuy)\n\n_vsell = (FTX:BTC-PERP.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=FTX Perp)",
+          "script": "_vbuy = (FTX:BTC-PERP.vbuy)\n\n_vsell = (FTX:BTC-PERP.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"FTX Perp\")",
           "id": "delta-ftx-perps",
           "name": "Delta FTX Perps",
           "priceScaleId": "delta-ftx-perps",
@@ -3340,19 +3373,25 @@
             "priceScaleId": "delta-ftx-perps",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(233,30,99)",
-            "visible": true
+            "visible": true,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
           },
           "series": [
-            "delta-ftx-perps"
+            "delta-ftx-perps8"
           ],
           "displayName": "Delta FTX Perps",
           "unsavedChanges": false,
           "createdAt": 1649330299391,
-          "updatedAt": 1649343684173,
+          "updatedAt": 1650523598399,
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "scriptOptions"
             ],
             "tab": 0,
             "optionsQuery": "",
@@ -3436,8 +3475,8 @@
         },
         "delta-bybit-perps": {
           "scaleMargins": {
-            "top": 0.59,
-            "bottom": 0.3
+            "top": 0.62,
+            "bottom": 0.26
           },
           "indicators": [
             "Delta Bybit Perps"
@@ -3445,8 +3484,8 @@
         },
         "delta-bitmex": {
           "scaleMargins": {
-            "top": 0.69,
-            "bottom": 0.2
+            "top": 0.74,
+            "bottom": 0.14
           },
           "indicators": [
             "Delta BitMex"
@@ -3463,8 +3502,8 @@
         },
         "delta-ftx-perps": {
           "scaleMargins": {
-            "top": 0.78,
-            "bottom": 0.11
+            "top": 0.86,
+            "bottom": 0.02
           },
           "indicators": [
             "Delta FTX Perps"
@@ -3472,8 +3511,8 @@
         },
         "delta-bitfinex-spot": {
           "scaleMargins": {
-            "top": 0.49,
-            "bottom": 0.4
+            "top": 0.5,
+            "bottom": 0.38
           },
           "indicators": [
             "Delta BitFinex Spot"
@@ -3493,7 +3532,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 6.467859238618895,
+      "barSpacing": 6.084028776543857,
       "_id": "chart8"
     },
     "stats2": {
