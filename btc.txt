@@ -1,7 +1,7 @@
 {
   "version": 5,
   "createdAt": 1649253453939,
-  "updatedAt": 1649854304980,
+  "updatedAt": 1650522362372,
   "name": "RifeBTC",
   "id": "g0cz",
   "states": {
@@ -1073,6 +1073,20 @@
             "KRAKEN:XBT/USDT",
             "KRAKEN:XBT/USD"
           ]
+        },
+        "stats2": {
+          "id": "stats2",
+          "name": "",
+          "type": "stats",
+          "zoom": 0.875,
+          "markets": [
+            "BINANCE:btcusdt",
+            "BITFINEX:BTCUSD",
+            "COINBASE:BTC-USD",
+            "COINBASE:BTC-USDT",
+            "FTX:BTC/USD",
+            "FTX:BTC/USDT"
+          ]
         }
       },
       "layout": [
@@ -1109,7 +1123,7 @@
           "y": 0,
           "x": 0,
           "w": 3,
-          "h": 17,
+          "h": 15,
           "moved": false
         },
         {
@@ -1174,6 +1188,15 @@
           "w": 6,
           "h": 17,
           "moved": false
+        },
+        {
+          "i": "stats2",
+          "type": "stats",
+          "y": 15,
+          "x": 0,
+          "w": 3,
+          "h": 2,
+          "moved": false
         }
       ]
     },
@@ -1208,7 +1231,7 @@
       ],
       "searchTypes": {
         "historical": true,
-        "spots": false,
+        "spots": true,
         "perpetuals": false,
         "futures": false,
         "normalize": true,
@@ -1217,12 +1240,6 @@
       "searchQuotes": {
         "USD": true,
         "USDT": true
-      },
-      "searchExchanges": {
-        "BINANCE_FUTURES": true,
-        "BITSTAMP": true,
-        "DYDX": true,
-        "KRAKEN": true
       },
       "favoriteTimeframes": {
         "60": "1m",
@@ -1237,7 +1254,13 @@
       "alertsColor": "red",
       "alertsLineStyle": 2,
       "alertsLineWidth": 2,
-      "alertsClick": false
+      "alertsClick": false,
+      "searchExchanges": {
+        "BINANCE_FUTURES": true,
+        "BITSTAMP": true,
+        "DYDX": true,
+        "KRAKEN": true
+      }
     },
     "exchanges": {
       "BINANCE": {
@@ -1278,7 +1301,7 @@
       },
       "DYDX": {
         "disabled": false,
-        "fetched": false
+        "fetched": true
       },
       "FTX": {
         "disabled": false,
@@ -1311,7 +1334,9 @@
       "_id": "exchanges"
     },
     "chart": {
-      "indicatorsErrors": {},
+      "indicatorsErrors": {
+        "cvd-btc-perp": null
+      },
       "indicators": {
         "price": {
           "enabled": true,
@@ -1353,7 +1378,7 @@
           }
         },
         "cvd-btc-spot": {
-          "script": "line(cum((BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+BITFINEX:BTCUSD.vbuy+BITSTAMP:btcusd.vbuy+BITSTAMP:btcusdt.vbuy+BITSTAMP:btcusdc.vbuy+COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy+FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy+HUOBI:btcusdt.vbuy+HUOBI:btcusdc.vbuy+KRAKEN:XBT/USDC.vbuy+KRAKEN:XBT/USDT.vbuy+KRAKEN:XBT/USD.vbuy+OKEX:BTC-USDT.vbuy+OKEX:BTC-USDC.vbuy+POLONIEX:USDT_BTC.vbuy+POLONIEX:USDC_BTC.vbuy)-(BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+BITFINEX:BTCUSD.vsell+BITSTAMP:btcusd.vsell+BITSTAMP:btcusdt.vsell+BITSTAMP:btcusdc.vsell+COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell+FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell+HUOBI:btcusdt.vsell+HUOBI:btcusdc.vsell+KRAKEN:XBT/USDC.vsell+KRAKEN:XBT/USDT.vsell+KRAKEN:XBT/USD.vsell+OKEX:BTC-USDT.vsell+OKEX:BTC-USDC.vsell+POLONIEX:USDT_BTC.vsell+POLONIEX:USDC_BTC.vsell)), title=SPOT)",
+          "script": "// removed Binance given persistent negative flow\n// BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+\n//BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+\n\nline(cum((BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+BITFINEX:BTCUSD.vbuy+BITSTAMP:btcusd.vbuy+BITSTAMP:btcusdt.vbuy+BITSTAMP:btcusdc.vbuy+COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy+FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy+HUOBI:btcusdt.vbuy+HUOBI:btcusdc.vbuy+KRAKEN:XBT/USDC.vbuy+KRAKEN:XBT/USDT.vbuy+KRAKEN:XBT/USD.vbuy+OKEX:BTC-USDT.vbuy+OKEX:BTC-USDC.vbuy+POLONIEX:USDT_BTC.vbuy+POLONIEX:USDC_BTC.vbuy)-(BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+BITFINEX:BTCUSD.vsell+BITSTAMP:btcusd.vsell+BITSTAMP:btcusdt.vsell+BITSTAMP:btcusdc.vsell+COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell+FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell+HUOBI:btcusdt.vsell+HUOBI:btcusdc.vsell+KRAKEN:XBT/USDC.vsell+KRAKEN:XBT/USDT.vsell+KRAKEN:XBT/USD.vsell+OKEX:BTC-USDT.vsell+OKEX:BTC-USDC.vsell+POLONIEX:USDT_BTC.vsell+POLONIEX:USDC_BTC.vsell)), title=SPOT)",
           "id": "cvd-btc-spot",
           "name": "CVD BTC Spot",
           "priceScaleId": "cvd-btc-spot",
@@ -1381,7 +1406,7 @@
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649408431603
+          "updatedAt": 1650372212170
         },
         "cvd-btc-perp": {
           "script": "line(cum((BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)- (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)), title=PERP)",
@@ -1395,7 +1420,7 @@
             "lineWidth": 1
           },
           "series": [
-            "cvd-btc-perp"
+            "cvd-btc-perp3"
           ],
           "displayName": "CVD BTC Perp",
           "unsavedChanges": false,
@@ -1403,312 +1428,15 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors",
               "format",
-              "defaultOptions"
+              "defaultOptions",
+              "colors"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
           "updatedAt": 1649408437745
-        },
-        "allmarkets": {
-          "script": "plotline(BITFINEX:BTCUSD.close, color=transparent, title=Bitfinex.spot)\nplotline(BINANCE:btcusdt.close, color=transparent, title=Binance.spot)\nplotline(OKEX:BTC-USDT.close, color=transparent, title=Okex.spot)\nplotline(KRAKEN:XBT/USD.close, color=transparent, title=Kraken.spot)\nplotline(COINBASE:BTC-USD.close, color=transparent, title=Coinbase.spot)\nplotline(POLONIEX:USDT_BTC.close, color=transparent, title=Poloniex.spot)\nplotline(HUOBI:btcusdt.close, color=transparent, title=Huobi.spot)\nplotline(BITSTAMP:btcusd.close, color=transparent, title=Bitstamp.spot)\nplotline(BITMEX:XBTUSD.close, color=transparent, title=Bitmex.perp)\nplotline(BITFINEX:BTCF0:USTF0.close, color=transparent, title=Bitfinex.perp)\nplotline(OKEX:BTC-USD-SWAP.close, color=transparent, title=Okex.perp)\nplotline(BINANCE_FUTURES:btcusdt.close, color=transparent, title=Binance.perp)\nplotline(BINANCE_FUTURES:btcusd_perp.close, color=transparent, title=Binance.perp)\nplotline(HUOBI:BTC-USD.close, color=transparent, title=Huobi.perp)\nplotline(KRAKEN:PI_XBTUSD.close, color=transparent, title=Kraken.perp)\nplotline(DERIBIT:BTC-PERPETUAL.close, color=transparent, title=Deribit.perp)\nplotline(FTX:BTC-PERP.close, color=transparent, title=Ftx.perp)\nplotline(BYBIT:BTCUSD.close, color=transparent, title=Bybit.perp)",
-          "description": "Multiple markets at once",
-          "name": "All markets",
-          "options": {
-            "priceScaleId": "right",
-            "spotColor": "#81c784",
-            "futuresColor": "#ec407a",
-            "visible": false
-          },
-          "id": "allmarkets",
-          "createdAt": 1648450392186,
-          "updatedAt": 1649235032209,
-          "series": [
-            "allmarkets3",
-            "un3a0cb1",
-            "2uz11fq4",
-            "1a50mo7n",
-            "68qe4fr9",
-            "4zog1mda",
-            "x3sbugl9",
-            "6uyff4pg",
-            "lwelkohm",
-            "j7z5p0a7",
-            "qa02klwc",
-            "uxkhofch",
-            "bqqdnzvd",
-            "ofhstksl",
-            "40xqjjrl",
-            "6064nq2z",
-            "1o0x3g5h",
-            "fcuy8fry"
-          ],
-          "displayName": "All markets",
-          "unsavedChanges": false,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": "#script",
-            "optionsQuery": "",
-            "fontSize": 1
-          }
-        },
-        "cvd-coinbase": {
-          "script": "plotline(sma(cum((COINBASE:BTC-USD.vbuy + COINBASE:BTC-USDT.vbuy + COINBASE:BTC-USDC.vbuy)-(COINBASE:BTC-USD.vsell + COINBASE:BTC-USDT.vsell + COINBASE:BTC-USDC.vsell)), 3), title=Coinbase)",
-          "id": "cvd-coinbase",
-          "name": "CVD Coinbase",
-          "priceScaleId": "right",
-          "options": {
-            "priceScaleId": "cvd-coinbase",
-            "color": "rgb(25,118,210)",
-            "visible": false,
-            "lastValueVisible": false
-          },
-          "series": [
-            "cvd-coinbase"
-          ],
-          "displayName": "CVD Coinbase",
-          "unsavedChanges": false,
-          "createdAt": 1649239102284,
-          "navigationState": {
-            "sections": [
-              "colors",
-              "position"
-            ],
-            "tab": "#script",
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649242051394
-        },
-        "cvd-bitfinex-spot2": {
-          "script": "plotline(sma(cum(BITFINEX:BTCUSD.vbuy-BITFINEX:BTCUSD.vsell), 3), title=Bitfinex Spot)",
-          "id": "cvd-bitfinex-spot2",
-          "name": "CVD Bitfinex Spot",
-          "priceScaleId": "cvd-bitfinex-spot",
-          "options": {
-            "priceScaleId": "cvd-bitfinex-spot2",
-            "color": "rgb(56,142,60)",
-            "visible": false
-          },
-          "series": [
-            "cvd-bitfinex-spot2"
-          ],
-          "displayName": "CVD Bitfinex Spot",
-          "unsavedChanges": false,
-          "createdAt": 1649239230058,
-          "updatedAt": 1649246959530,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          }
-        },
-        "cvd-binance-spot": {
-          "script": "plotline(sma(cum((BINANCE:btcusdt.vbuy) - (BINANCE:btcusdt.vsell)), 3), title=Binance Spot)",
-          "id": "cvd-binance-spot",
-          "name": "CVD Binance Spot",
-          "priceScaleId": "cvd-binance-spot",
-          "options": {
-            "priceScaleId": "cvd-binance-spot",
-            "color": "rgb(251,192,45)",
-            "visible": false
-          },
-          "series": [
-            "cvd-binance-spot"
-          ],
-          "displayName": "CVD Binance Spot",
-          "unsavedChanges": false,
-          "createdAt": 1649239311989,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649241321421
-        },
-        "cvd-ftx-spot": {
-          "script": "plotline(sma(cum((FTX:BTC/USDT.vbuy + FTX:BTC/USD.vbuy) - (FTX:BTC/USDT.vsell + FTX:BTC/USD.vsell)), 3), title=FTX spot)",
-          "id": "cvd-ftx-spot",
-          "name": "CVD FTX Spot",
-          "priceScaleId": "cvd-ftx-spot",
-          "options": {
-            "priceScaleId": "cvd-ftx-spot",
-            "color": "rgb(204,204,204)",
-            "visible": false
-          },
-          "series": [
-            "cvd-ftx-spot"
-          ],
-          "displayName": "CVD FTX Spot",
-          "unsavedChanges": false,
-          "createdAt": 1649239417563,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649241340113
-        },
-        "cvd-bitmex": {
-          "script": "plotline(sma(cum((BITMEX:XBTUSD.vbuy) - (BITMEX:XBTUSD.vsell)), 3), title=Bitmex)",
-          "id": "cvd-bitmex",
-          "name": "CVD BitMex",
-          "priceScaleId": "cvd-bitmex",
-          "options": {
-            "priceScaleId": "cvd-bitmex",
-            "color": "rgb(233,30,99)",
-            "lineStyle": 1,
-            "visible": false,
-            "lastValueVisible": false
-          },
-          "series": [
-            "cvd-bitmex"
-          ],
-          "displayName": "CVD BitMex",
-          "unsavedChanges": true,
-          "createdAt": 1649239477933,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649241360024
-        },
-        "cvd-ftx-perps": {
-          "script": "plotline(sma(cum((FTX:BTC-PERP.vbuy) - (FTX:BTC-PERP.vsell)), 3), title=FTX perps)",
-          "id": "cvd-ftx-perps",
-          "name": "CVD FTX Perps",
-          "priceScaleId": "cvd-ftx-perps",
-          "options": {
-            "priceScaleId": "cvd-ftx-perps",
-            "color": "rgb(117,117,117)",
-            "lineStyle": 1,
-            "visible": false
-          },
-          "series": [
-            "cvd-ftx-perps"
-          ],
-          "displayName": "CVD FTX Perps",
-          "unsavedChanges": false,
-          "createdAt": 1649239730909,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors",
-              "defaultOptions"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649241422992
-        },
-        "cvd-binance-perps": {
-          "script": "plotline(sma(cum((BINANCE_FUTURES:btcusd_perp.vbuy + BINANCE_FUTURES:btcusdt.vbuy) - (BINANCE_FUTURES:btcusd_perp.vsell + BINANCE_FUTURES:btcusdt.vsell)), 3), title=Binance Perps)",
-          "id": "cvd-binance-perps",
-          "name": "CVD Binance Perps",
-          "priceScaleId": "cvd-binance-perps",
-          "options": {
-            "priceScaleId": "cvd-binance-perps",
-            "color": "rgb(251,192,45)",
-            "lineStyle": 1,
-            "visible": false
-          },
-          "series": [
-            "cvd-binance-perps"
-          ],
-          "displayName": "CVD Binance Perps",
-          "unsavedChanges": false,
-          "createdAt": 1649239562565,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors",
-              "defaultOptions"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649241379449
-        },
-        "cvd-bybit-perps": {
-          "script": "plotline(sma(cum((BYBIT:BTCUSD.vbuy + BYBIT:BTCUSDT.vbuy) - (BYBIT:BTCUSD.vsell + BYBIT:BTCUSDT.vsell)), 3), title=Bybit)",
-          "id": "cvd-bybit-perps",
-          "name": "CVD Bybit Perps",
-          "priceScaleId": "cvd-bybit-perps",
-          "options": {
-            "priceScaleId": "cvd-bybit-perps",
-            "color": "rgba(255,238,88,0.5)",
-            "lineStyle": 1,
-            "visible": false
-          },
-          "series": [
-            "cvd-bybit-perps"
-          ],
-          "displayName": "CVD Bybit Perps",
-          "unsavedChanges": false,
-          "createdAt": 1649239620556,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649247330691
-        },
-        "cvd-bitfinex-perps": {
-          "script": "line(sma(cum(BITFINEX:BTCF0:USTF0.vbuy - BITFINEX:BTCF0:USTF0.vsell), 3), title=BitfinexPerps)",
-          "id": "cvd-bitfinex-perps",
-          "name": "CVD Bitfinex Perps",
-          "priceScaleId": "cvd-bitfinex-perps",
-          "options": {
-            "priceScaleId": "cvd-bitfinex-perps",
-            "color": "rgb(56,142,60)",
-            "lineStyle": 1,
-            "visible": false
-          },
-          "series": [
-            "cvd-bitfinex-perps"
-          ],
-          "displayName": "CVD Bitfinex Perps",
-          "unsavedChanges": false,
-          "createdAt": 1649239678658,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
-            ],
-            "tab": 0,
-            "optionsQuery": "",
-            "fontSize": 1
-          },
-          "updatedAt": 1649246947793
         },
         "perps-premium": {
           "script": "perpAvg = (BYBIT:BTCUSD.close + FTX:BTC-PERP.close + BITMEX:XBTUSD.close + BINANCE_FUTURES:btcusd_perp.close) / 4\n\nspotAvg = (COINBASE:BTC-USD.close + BINANCE:btcusdt.close + BITFINEX:BTCUSD.close)/3\n\npremium = perpAvg - spotAvg\nbaseline = 0\n\nplotcloudarea(premium, baseline, title=PerpPrem)",
@@ -1750,7 +1478,7 @@
           "uses": 3
         },
         "delta-spot": {
-          "script": "_vbuy = (BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+BITFINEX:BTCUSD.vbuy+BITSTAMP:btcusd.vbuy+BITSTAMP:btcusdt.vbuy+BITSTAMP:btcusdc.vbuy+COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy+FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy+HUOBI:btcusdt.vbuy+HUOBI:btcusdc.vbuy+KRAKEN:XBT/USDC.vbuy+KRAKEN:XBT/USDT.vbuy+KRAKEN:XBT/USD.vbuy+OKEX:BTC-USDT.vbuy+OKEX:BTC-USDC.vbuy+POLONIEX:USDT_BTC.vbuy+POLONIEX:USDC_BTC.vbuy)\n\n_vsell = (BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+BITFINEX:BTCUSD.vsell+BITSTAMP:btcusd.vsell+BITSTAMP:btcusdt.vsell+BITSTAMP:btcusdc.vsell+COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell+FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell+HUOBI:btcusdt.vsell+HUOBI:btcusdc.vsell+KRAKEN:XBT/USDC.vsell+KRAKEN:XBT/USDT.vsell+KRAKEN:XBT/USD.vsell+OKEX:BTC-USDT.vsell+OKEX:BTC-USDC.vsell+POLONIEX:USDT_BTC.vsell+POLONIEX:USDC_BTC.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Delta Spot)",
+          "script": "_vbuy = (BINANCE:btcusdt.vbuy+BINANCE:btcusdc.vbuy+BITFINEX:BTCUSD.vbuy+BITSTAMP:btcusd.vbuy+BITSTAMP:btcusdt.vbuy+BITSTAMP:btcusdc.vbuy+COINBASE:BTC-USDC.vbuy+COINBASE:BTC-USD.vbuy+COINBASE:BTC-USDT.vbuy+FTX:BTC/USD.vbuy+FTX:BTC/USDT.vbuy+HUOBI:btcusdt.vbuy+HUOBI:btcusdc.vbuy+KRAKEN:XBT/USDC.vbuy+KRAKEN:XBT/USDT.vbuy+KRAKEN:XBT/USD.vbuy+OKEX:BTC-USDT.vbuy+OKEX:BTC-USDC.vbuy+POLONIEX:USDT_BTC.vbuy+POLONIEX:USDC_BTC.vbuy)\n\n_vsell = (BINANCE:btcusdt.vsell+BINANCE:btcusdc.vsell+BITFINEX:BTCUSD.vsell+BITSTAMP:btcusd.vsell+BITSTAMP:btcusdt.vsell+BITSTAMP:btcusdc.vsell+COINBASE:BTC-USDC.vsell+COINBASE:BTC-USD.vsell+COINBASE:BTC-USDT.vsell+FTX:BTC/USD.vsell+FTX:BTC/USDT.vsell+HUOBI:btcusdt.vsell+HUOBI:btcusdc.vsell+KRAKEN:XBT/USDC.vsell+KRAKEN:XBT/USDT.vsell+KRAKEN:XBT/USD.vsell+OKEX:BTC-USDT.vsell+OKEX:BTC-USDC.vsell+POLONIEX:USDT_BTC.vsell+POLONIEX:USDC_BTC.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Spot\")",
           "id": "delta-spot",
           "name": "Delta Spot",
           "priceScaleId": "delta-spot",
@@ -1758,10 +1486,15 @@
             "priceScaleId": "delta-spot",
             "upColor": "rgb(0,150,136)",
             "downColor": "rgb(236,64,122)",
-            "visible": true
+            "visible": true,
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "upColorHighVol": "rgb(77,182,172)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "length": 7
           },
           "series": [
-            "delta-spot"
+            "delta-spot10"
           ],
           "displayName": "Delta Spot",
           "unsavedChanges": false,
@@ -1769,16 +1502,18 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "defaultOptions",
+              "scriptOptions"
             ],
-            "tab": "#script",
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649254515521
+          "updatedAt": 1650521195259
         },
         "delta-perps": {
-          "script": "_vbuy = (BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)\n\n_vsell = (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)\n\nplothistogram({ time: time, value: (_vbuy-_vsell), color: _vbuy - _vsell > 0 ? options.upColor : options.downColor}, title=Delta Perps)",
+          "script": "_vbuy = (BINANCE_FUTURES:btcusdt.vbuy+BINANCE_FUTURES:btcusd_perp.vbuy+BITFINEX:BTCF0:USTF0.vbuy+BITMEX:XBTUSD.vbuy+BYBIT:BTCUSD.vbuy+BYBIT:BTCUSDT.vbuy+DERIBIT:BTC-PERPETUAL.vbuy+FTX:BTC-PERP.vbuy+HUOBI:BTC-USD.vbuy+KRAKEN:PI_XBTUSD.vbuy+OKEX:BTC-USDT-SWAP.vbuy+OKEX:BTC-USD-SWAP.vbuy)\n\n_vsell = (BINANCE_FUTURES:btcusdt.vsell+BINANCE_FUTURES:btcusd_perp.vsell+BITFINEX:BTCF0:USTF0.vsell+BITMEX:XBTUSD.vsell+BYBIT:BTCUSD.vsell+BYBIT:BTCUSDT.vsell+DERIBIT:BTC-PERPETUAL.vsell+FTX:BTC-PERP.vsell+HUOBI:BTC-USD.vsell+KRAKEN:PI_XBTUSD.vsell+OKEX:BTC-USDT-SWAP.vsell+OKEX:BTC-USD-SWAP.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Perps\")",
           "id": "delta-perps",
           "name": "Delta Perps",
           "priceScaleId": "delta-perps",
@@ -1786,24 +1521,30 @@
             "priceScaleId": "delta-perps",
             "upColor": "rgb(100,181,246)",
             "downColor": "rgb(239,83,80)",
-            "visible": true
+            "visible": true,
+            "upColorHighVol": "rgb(77,182,172)",
+            "upColorLowVol": "rgb(0,121,107)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
           },
           "series": [
-            "delta-perps"
+            "delta-perps10"
           ],
           "displayName": "Delta Perps",
-          "unsavedChanges": true,
+          "unsavedChanges": false,
           "createdAt": 1649243704762,
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "scriptOptions"
             ],
-            "tab": "#script",
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649254526543
+          "updatedAt": 1650521390250
         },
         "liquidations": {
           "script": "plothistogram(lbuy, color=options.upColor)\nplothistogram(-lsell, color=options.downColor)",
@@ -1828,7 +1569,7 @@
           "uses": 1,
           "series": [
             "liquidations",
-            "whqlpfmd"
+            "lmo746qy"
           ],
           "displayName": "Liquidations"
         }
@@ -1836,8 +1577,8 @@
       "priceScales": {
         "right": {
           "scaleMargins": {
-            "top": 0.09,
-            "bottom": 0.63
+            "top": 0.07,
+            "bottom": 0.69
           },
           "indicators": [
             "Price"
@@ -1869,8 +1610,8 @@
         },
         "volume_liquidations": {
           "scaleMargins": {
-            "top": 0.83,
-            "bottom": 0.09
+            "top": 0.79,
+            "bottom": 0.12
           },
           "indicators": [
             "Liquidations"
@@ -1887,8 +1628,8 @@
         },
         "cvd-btc-spot": {
           "scaleMargins": {
-            "top": 0.33,
-            "bottom": 0.46
+            "top": 0.29,
+            "bottom": 0.47
           },
           "indicators": [
             "CVD BTC Spot"
@@ -1896,8 +1637,8 @@
         },
         "cvd-btc-perp": {
           "scaleMargins": {
-            "top": 0.33,
-            "bottom": 0.46
+            "top": 0.28,
+            "bottom": 0.47
           },
           "indicators": [
             "CVD BTC Perp"
@@ -1905,7 +1646,7 @@
         },
         "perps-premium": {
           "scaleMargins": {
-            "top": 0.91,
+            "top": 0.89,
             "bottom": 0.02
           },
           "indicators": [
@@ -2004,8 +1745,8 @@
         },
         "delta-spot": {
           "scaleMargins": {
-            "top": 0.59,
-            "bottom": 0.29
+            "top": 0.55,
+            "bottom": 0.33
           },
           "indicators": [
             "Delta Spot"
@@ -2014,8 +1755,8 @@
         },
         "delta-perps": {
           "scaleMargins": {
-            "top": 0.72,
-            "bottom": 0.16
+            "top": 0.66,
+            "bottom": 0.22
           },
           "indicators": [
             "Delta Perps"
@@ -2059,10 +1800,22 @@
           "indicators": [
             "Liquidations - Shorts"
           ]
+        },
+        "volume-sma": {
+          "scaleMargins": {
+            "top": 0.1,
+            "bottom": 0.2
+          }
+        },
+        "volume-stdev": {
+          "scaleMargins": {
+            "top": 0.1,
+            "bottom": 0.2
+          }
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "60",
       "refreshRate": 1000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2091,7 +1844,7 @@
         "FTX:BTC/USDT": false,
         "COINBASE:BTC-USDT": false
       },
-      "barSpacing": 2.722932534075132,
+      "barSpacing": 7.148826650543717,
       "_id": "chart"
     },
     "stats": {
@@ -2376,7 +2129,8 @@
             "priceScaleId": "cvd-coinbase",
             "color": "rgb(25,118,210)",
             "visible": true,
-            "lastValueVisible": false
+            "lastValueVisible": false,
+            "lineWidth": 2
           },
           "series": [
             "cvd-coinbase"
@@ -2386,13 +2140,14 @@
           "createdAt": 1649239102284,
           "navigationState": {
             "sections": [
-              "colors"
+              "colors",
+              "defaultOptions"
             ],
-            "tab": "#script",
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242051394
+          "updatedAt": 1650520866199
         },
         "cvd-bitmex": {
           "script": "plotline(sma(cum((BITMEX:XBTUSD.vbuy) - (BITMEX:XBTUSD.vsell)), 3), title=Bitmex)",
@@ -2403,7 +2158,8 @@
             "priceScaleId": "cvd-bitmex",
             "color": "rgb(233,30,99)",
             "lineStyle": 1,
-            "visible": true
+            "visible": true,
+            "lineWidth": 2
           },
           "series": [
             "cvd-bitmex"
@@ -2417,11 +2173,11 @@
               "colors",
               "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242198712,
+          "updatedAt": 1650520873665,
           "uses": 1
         },
         "cvd-deribit": {
@@ -2432,7 +2188,8 @@
           "options": {
             "priceScaleId": "cvd-deribit",
             "color": "rgb(129,199,132)",
-            "lineStyle": 1
+            "lineStyle": 1,
+            "lineWidth": 2
           },
           "series": [
             "cvd-deribit"
@@ -2446,11 +2203,11 @@
               "colors",
               "defaultOptions"
             ],
-            "tab": "#script",
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649679643925
+          "updatedAt": 1650520880477
         }
       },
       "priceScales": {
@@ -2501,7 +2258,7 @@
         }
       },
       "layouting": false,
-      "timeframe": 900,
+      "timeframe": "900",
       "refreshRate": 10000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -2513,7 +2270,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.7530345753146164,
+      "barSpacing": 3.2302316850450135,
       "_id": "chart2"
     },
     "chart3": {
@@ -2567,7 +2324,8 @@
           "options": {
             "priceScaleId": "cvd-binance-spot",
             "color": "rgb(251,192,45)",
-            "visible": true
+            "visible": true,
+            "lineWidth": 2
           },
           "series": [
             "cvd-binance-spot"
@@ -2578,13 +2336,14 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242001298,
+          "updatedAt": 1650520845952,
           "uses": 1
         },
         "cvd-binance-perps": {
@@ -2596,7 +2355,8 @@
             "priceScaleId": "cvd-binance-perps",
             "color": "rgb(251,192,45)",
             "lineStyle": 1,
-            "visible": true
+            "visible": true,
+            "lineWidth": 2
           },
           "series": [
             "cvd-binance-perps"
@@ -2610,11 +2370,11 @@
               "colors",
               "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242225182,
+          "updatedAt": 1650520852092,
           "uses": 1
         }
       },
@@ -2675,7 +2435,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.7494236256175726,
+      "barSpacing": 3.346534563465137,
       "_id": "chart3"
     },
     "chart4": {
@@ -2729,7 +2489,8 @@
           "options": {
             "priceScaleId": "cvd-ftx-spot",
             "color": "rgb(204,204,204)",
-            "visible": true
+            "visible": true,
+            "lineWidth": 2
           },
           "series": [
             "cvd-ftx-spot"
@@ -2740,13 +2501,14 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649404059597,
+          "updatedAt": 1650520822729,
           "uses": 1
         },
         "cvd-ftx-perps": {
@@ -2756,11 +2518,12 @@
           "priceScaleId": "cvd-ftx-perps",
           "options": {
             "priceScaleId": "cvd-ftx-perps",
-            "color": "rgb(117,117,117)",
-            "lineStyle": 1
+            "color": "rgb(255,255,255)",
+            "lineStyle": 1,
+            "lineWidth": 2
           },
           "series": [
-            "cvd-ftx-perps"
+            "cvd-ftx-perps2"
           ],
           "displayName": "CVD FTX Perps",
           "unsavedChanges": false,
@@ -2768,14 +2531,13 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors",
-              "defaultOptions"
+              "colors"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649242219563,
+          "updatedAt": 1650521818395,
           "uses": 1
         }
       },
@@ -2848,7 +2610,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 4.815630637367516,
+      "barSpacing": 3.6519113958287814,
       "_id": "chart4"
     },
     "chart5": {
@@ -2902,7 +2664,8 @@
           "options": {
             "priceScaleId": "cvd-bitfinex-spot2",
             "color": "rgb(56,142,60)",
-            "visible": true
+            "visible": true,
+            "lineWidth": 2
           },
           "series": [
             "cvd-bitfinex-spot2"
@@ -2910,13 +2673,14 @@
           "displayName": "CVD Bitfinex Spot",
           "unsavedChanges": false,
           "createdAt": 1649239230058,
-          "updatedAt": 1649246959530,
+          "updatedAt": 1650520722161,
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           }
@@ -2929,7 +2693,8 @@
           "options": {
             "priceScaleId": "cvd-bitfinex-perps",
             "color": "rgb(56,142,60)",
-            "lineStyle": 1
+            "lineStyle": 1,
+            "lineWidth": 2
           },
           "series": [
             "cvd-bitfinex-perps"
@@ -2940,13 +2705,14 @@
           "navigationState": {
             "sections": [
               "position",
-              "colors"
+              "colors",
+              "defaultOptions"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649246947793
+          "updatedAt": 1650520732442
         }
       },
       "priceScales": {
@@ -3030,7 +2796,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.4638484990279914,
+      "barSpacing": 3.2432750704166264,
       "_id": "chart5"
     },
     "chart6": {
@@ -3083,24 +2849,27 @@
           "priceScaleId": "cvd-bybit-perps",
           "options": {
             "priceScaleId": "cvd-bybit-perps",
-            "color": "rgba(255,238,88,0.5)",
-            "lineStyle": 1
+            "color": "rgba(255,238,88,0.97)",
+            "lineStyle": 1,
+            "lineWidth": 2
           },
           "series": [
-            "cvd-bybit-perps"
+            "cvd-bybit-perps2"
           ],
           "displayName": "CVD Bybit Perps",
           "unsavedChanges": false,
           "createdAt": 1649239620556,
           "navigationState": {
             "sections": [
-              "position"
+              "position",
+              "defaultOptions",
+              "colors"
             ],
-            "tab": 0,
+            "tab": "#options",
             "optionsQuery": "",
             "fontSize": 1
           },
-          "updatedAt": 1649247330691
+          "updatedAt": 1650520785277
         }
       },
       "priceScales": {
@@ -3190,7 +2959,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 5.6050823371309075,
+      "barSpacing": 3.361503120067476,
       "_id": "chart6"
     },
     "chart7": {
@@ -3251,23 +3020,23 @@
           "updatedAt": 1649328210771,
           "series": [
             "allmarkets",
-            "376pkqh1",
-            "wvgq1auq",
-            "grvlliqv",
-            "8wjv90mo",
-            "beow39xr",
-            "83lh20ev",
-            "bmgwkszj",
-            "hn6zsew6",
-            "gdftxyog",
-            "st6k8dmn",
-            "mljcac02",
-            "ojy409zt",
-            "acb1j3cw",
-            "n2pq2iy8",
-            "0lzcl8xj",
-            "i9egmz73",
-            "xh3xiuk6"
+            "shvrvqq5",
+            "o3p9pf0v",
+            "9n0msac0",
+            "kuvlx4q3",
+            "kxdq5rwh",
+            "04rg8r84",
+            "hjqwi3wu",
+            "a4kryi6v",
+            "eu27wejs",
+            "52rt6ezw",
+            "jwmwr7wi",
+            "rz54kdz5",
+            "qja874ox",
+            "ehm25tt3",
+            "8guzay93",
+            "d7x7s39d",
+            "5sy7v2p4"
           ],
           "displayName": "All markets",
           "unsavedChanges": false,
@@ -3375,7 +3144,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 11.949302789219141,
+      "barSpacing": 8.755635928943812,
       "_id": "chart7"
     },
     "chart8": {
@@ -3598,7 +3367,8 @@
           "options": {
             "priceScaleId": "delta-bitfinex-spot",
             "upColor": "rgb(0,150,136)",
-            "downColor": "rgb(233,30,99)"
+            "downColor": "rgb(233,30,99)",
+            "visible": true
           },
           "series": [
             "delta-bitfinex-spot"
@@ -3711,7 +3481,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "60",
       "refreshRate": 1000,
       "showLegend": true,
       "fillGapsWithEmpty": true,
@@ -3723,8 +3493,53 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 3.482531194159772,
+      "barSpacing": 6.467859238618895,
       "_id": "chart8"
+    },
+    "stats2": {
+      "granularity": 5000,
+      "window": 60000,
+      "enableChart": false,
+      "buckets": {
+        "trades": {
+          "id": "trades",
+          "name": "TRADES",
+          "input": "cbuy + csell",
+          "enabled": true,
+          "color": "rgba(255, 255, 255, .25)",
+          "precision": 2,
+          "type": "line"
+        },
+        "vold": {
+          "id": "vold",
+          "name": "VOLUME",
+          "input": "vbuy + vsell",
+          "enabled": true,
+          "color": "#40d745",
+          "type": "area",
+          "conditionnalColor": false
+        },
+        "tradesd": {
+          "id": "tradesd",
+          "name": "TRADES Δ",
+          "input": "cbuy - csell",
+          "enabled": false,
+          "color": "#2196f3",
+          "precision": 2,
+          "type": "line"
+        },
+        "1hliq": {
+          "id": "1hliq",
+          "name": "1H LIQUIDATIONS Δ",
+          "window": 3600000,
+          "input": "lbuy-lsell",
+          "enabled": false,
+          "color": "value>0?'#43a047':'#f44336'",
+          "conditionnalColor": true,
+          "type": "histogram"
+        }
+      },
+      "_id": "stats2"
     }
   }
 }
