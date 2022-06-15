@@ -1,6 +1,6 @@
 {
   "name": "aggr-templates",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "aggr templates",
   "main": "btc.txt",
   "scripts": {
