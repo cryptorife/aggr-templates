@@ -1,9 +1,9 @@
 {
   "version": 5,
-  "createdAt": 1661523363143,
-  "updatedAt": 1661775045449,
-  "name": "RifeETH",
-  "id": "rifeeth",
+  "createdAt": 1668675790079,
+  "updatedAt": 1668675822461,
+  "name": "RifeETH v1.3",
+  "id": "rifeeth-v13",
   "states": {
     "panes": {
       "_id": "panes",
@@ -16,7 +16,6 @@
           "markets": [
             "BINANCE_FUTURES:ethusd_perp",
             "BINANCE_FUTURES:ethusdt",
-            "BINANCE:ethusdc",
             "BINANCE:ethusdt",
             "BITFINEX:ETHF0:USTF0",
             "BITFINEX:ETHUSD",
@@ -37,14 +36,12 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT",
             "KRAKEN:PI_ETHUSD",
-            "PHEMEX:ETHUSD"
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
           ],
           "zoom": 1
         },
@@ -64,9 +61,9 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
             "KRAKEN:PI_ETHUSD",
-            "PHEMEX:ETHUSD"
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
           ]
         },
         "trades": {
@@ -86,9 +83,9 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
             "KRAKEN:PI_ETHUSD",
-            "PHEMEX:ETHUSD"
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
           ]
         },
         "trades2": {
@@ -97,7 +94,6 @@
           "type": "trades",
           "zoom": 0.875,
           "markets": [
-            "BINANCE:ethusdc",
             "BINANCE:ethusdt",
             "BITFINEX:ETHUSD",
             "BITFINEX:ETHUST",
@@ -109,8 +105,6 @@
             "COINBASE:ETH-USD",
             "COINBASE:ETH-USDC",
             "COINBASE:ETH-USDT",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT"
@@ -124,7 +118,6 @@
           "markets": [
             "BINANCE_FUTURES:ethusd_perp",
             "BINANCE_FUTURES:ethusdt",
-            "BINANCE:ethusdc",
             "BINANCE:ethusdt",
             "BITFINEX:ETHF0:USTF0",
             "BITFINEX:ETHUSD",
@@ -145,14 +138,12 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT",
             "KRAKEN:PI_ETHUSD",
-            "PHEMEX:ETHUSD"
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
           ]
         },
         "stats2": {
@@ -161,7 +152,6 @@
           "type": "stats",
           "zoom": 0.875,
           "markets": [
-            "BINANCE:ethusdc",
             "BINANCE:ethusdt",
             "BITFINEX:ETHUSD",
             "BITFINEX:ETHUST",
@@ -173,8 +163,6 @@
             "COINBASE:ETH-USD",
             "COINBASE:ETH-USDC",
             "COINBASE:ETH-USDT",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT"
@@ -196,9 +184,9 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
             "KRAKEN:PI_ETHUSD",
-            "PHEMEX:ETHUSD"
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
           ]
         }
       },
@@ -218,7 +206,7 @@
           "y": 16,
           "x": 21,
           "w": 3,
-          "h": 2,
+          "h": 3,
           "moved": false
         },
         {
@@ -260,10 +248,10 @@
         {
           "i": "trades3",
           "type": "trades",
-          "y": 18,
+          "y": 19,
           "x": 21,
           "w": 3,
-          "h": 6,
+          "h": 5,
           "moved": false
         }
       ]
@@ -281,7 +269,7 @@
       "buyColor": "rgb(100, 157, 102)",
       "sellColor": "rgb(239, 67, 82)",
       "timezoneOffset": 0,
-      "useAudio": false,
+      "useAudio": true,
       "audioVolume": 0.35,
       "audioFilters": {
         "PingPongDelay": true,
@@ -301,8 +289,8 @@
         "list"
       ],
       "searchSections": [
-        "types",
-        "exchanges"
+        "exchanges",
+        "types"
       ],
       "searchTypes": {
         "historical": false,
@@ -328,11 +316,45 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
             "KRAKEN:PI_ETHUSD",
-            "PHEMEX:ETHUSD"
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
           ],
           "count": 14
+        },
+        {
+          "label": "ETHUSD",
+          "markets": [
+            "BINANCE_FUTURES:ethusd_perp",
+            "BINANCE_FUTURES:ethusdt",
+            "BINANCE:ethusdt",
+            "BITFINEX:ETHF0:USTF0",
+            "BITFINEX:ETHUSD",
+            "BITFINEX:ETHUST",
+            "BITMEX:ETH_USDT",
+            "BITMEX:ETHUSD",
+            "BITMEX:ETHUSDT",
+            "BITSTAMP:ethusd",
+            "BITSTAMP:ethusdc",
+            "BITSTAMP:ethusdt",
+            "BYBIT:ETHUSD",
+            "BYBIT:ETHUSDC-SPOT",
+            "BYBIT:ETHUSDT",
+            "BYBIT:ETHUSDT-SPOT",
+            "COINBASE:ETH-USD",
+            "COINBASE:ETH-USDC",
+            "COINBASE:ETH-USDT",
+            "DERIBIT:ETH_USDC-PERPETUAL",
+            "DERIBIT:ETH-PERPETUAL",
+            "DYDX:ETH-USD",
+            "KRAKEN:ETH/USD",
+            "KRAKEN:ETH/USDC",
+            "KRAKEN:ETH/USDT",
+            "KRAKEN:PI_ETHUSD",
+            "PHEMEX:ETHUSD",
+            "PHEMEX:ETHUSDT"
+          ],
+          "count": 28
         },
         {
           "label": "ETHUSD",
@@ -349,8 +371,6 @@
             "COINBASE:ETH-USD",
             "COINBASE:ETH-USDC",
             "COINBASE:ETH-USDT",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT"
@@ -369,7 +389,6 @@
             "BYBIT:ETHUSDT-SPOT",
             "COINBASE:ETH-USDC",
             "COINBASE:ETH-USDT",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT"
           ],
@@ -392,9 +411,6 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-0930",
-            "FTX:ETH-1230",
-            "FTX:ETH-PERP",
             "KRAKEN:FI_ETHUSD_220826",
             "KRAKEN:FI_ETHUSD_220930",
             "KRAKEN:FI_ETHUSD_221230",
@@ -429,9 +445,6 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT",
@@ -467,9 +480,6 @@
             "DERIBIT:ETH_USDC-PERPETUAL",
             "DERIBIT:ETH-PERPETUAL",
             "DYDX:ETH-USD",
-            "FTX:ETH-PERP",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT",
@@ -494,8 +504,6 @@
             "COINBASE:ETH-USD",
             "COINBASE:ETH-USDC",
             "COINBASE:ETH-USDT",
-            "FTX:ETH/USD",
-            "FTX:ETH/USDT",
             "KRAKEN:ETH/USD",
             "KRAKEN:ETH/USDC",
             "KRAKEN:ETH/USDT"
@@ -514,7 +522,6 @@
         "COINBASE": true,
         "DERIBIT": true,
         "DYDX": true,
-        "FTX": true,
         "HITBTC": true,
         "HUOBI": true,
         "KRAKEN": true,
@@ -654,6 +661,9 @@
       "alertSound": null
     },
     "exchanges": {
+      "AGGR": {
+        "disabled": true
+      },
       "BINANCE": {
         "disabled": false,
         "fetched": true
@@ -694,10 +704,6 @@
         "disabled": false,
         "fetched": false
       },
-      "FTX": {
-        "disabled": false,
-        "fetched": true
-      },
       "HITBTC": {
         "disabled": true,
         "fetched": false
@@ -728,7 +734,7 @@
       "indicatorsErrors": {},
       "indicators": {
         "delta-spot": {
-          "script": "_vbuy = (BINANCE:ethbusd.vbuy+BINANCE:ethusdc.vbuy+BINANCE:ethusdt.vbuy+BITFINEX:ETHUSD.vbuy+BITFINEX:ETHUST.vbuy+BITSTAMP:ethusd.vbuy+BITSTAMP:ethusdc.vbuy+BITSTAMP:ethusdt.vbuy+BYBIT:ETHUSDC-SPOT.vbuy+BYBIT:ETHUSDT-SPOT.vbuy+COINBASE:ETH-USD.vbuy+COINBASE:ETH-USDC.vbuy+COINBASE:ETH-USDT.vbuy+FTX:ETH/USD.vbuy+FTX:ETH/USDT.vbuy+KRAKEN:ETH/USD.vbuy+KRAKEN:ETH/USDC.vbuy+KRAKEN:ETH/USDT.vbuy)\n_vsell = (BINANCE:ethbusd.vsell+BINANCE:ethusdc.vsell+BINANCE:ethusdt.vsell+BITFINEX:ETHUSD.vsell+BITFINEX:ETHUST.vsell+BITSTAMP:ethusd.vsell+BITSTAMP:ethusdc.vsell+BITSTAMP:ethusdt.vsell+BYBIT:ETHUSDC-SPOT.vsell+BYBIT:ETHUSDT-SPOT.vsell+COINBASE:ETH-USD.vsell+COINBASE:ETH-USDC.vsell+COINBASE:ETH-USDT.vsell+FTX:ETH/USD.vsell+FTX:ETH/USDT.vsell+KRAKEN:ETH/USD.vsell+KRAKEN:ETH/USDC.vsell+KRAKEN:ETH/USDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Spot\")",
+          "script": "_vbuy = (BINANCE:ethbusd.vbuy+BINANCE:ethusdc.vbuy+BINANCE:ethusdt.vbuy+BITFINEX:ETHUSD.vbuy+BITFINEX:ETHUST.vbuy+BITSTAMP:ethusd.vbuy+BITSTAMP:ethusdc.vbuy+BITSTAMP:ethusdt.vbuy+BYBIT:ETHUSDC-SPOT.vbuy+BYBIT:ETHUSDT-SPOT.vbuy+COINBASE:ETH-USD.vbuy+COINBASE:ETH-USDC.vbuy+COINBASE:ETH-USDT.vbuy+KRAKEN:ETH/USD.vbuy+KRAKEN:ETH/USDC.vbuy+KRAKEN:ETH/USDT.vbuy)\n_vsell = (BINANCE:ethbusd.vsell+BINANCE:ethusdc.vsell+BINANCE:ethusdt.vsell+BITFINEX:ETHUSD.vsell+BITFINEX:ETHUST.vsell+BITSTAMP:ethusd.vsell+BITSTAMP:ethusdc.vsell+BITSTAMP:ethusdt.vsell+BYBIT:ETHUSDC-SPOT.vsell+BYBIT:ETHUSDT-SPOT.vsell+COINBASE:ETH-USD.vsell+COINBASE:ETH-USDC.vsell+COINBASE:ETH-USDT.vsell+KRAKEN:ETH/USD.vsell+KRAKEN:ETH/USDC.vsell+KRAKEN:ETH/USDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Spot\")",
           "id": "delta-spot",
           "name": "Delta Spot",
           "priceScaleId": "delta-spot",
@@ -763,7 +769,7 @@
           "updatedAt": 1661522561759
         },
         "delta-perps": {
-          "script": "_vbuy = (BINANCE_FUTURES:ethbusd.vbuy+BINANCE_FUTURES:ethusd_perp.vbuy+BINANCE_FUTURES:ethusdt.vbuy+BITFINEX:ETHF0:USTF0.vbuy+BITMEX:ETHUSD.vbuy+BITMEX:ETHUSDT.vbuy+BITMEX:ETH_USDT.vbuy+BYBIT:ETHUSD.vbuy+BYBIT:ETHUSDT.vbuy+DERIBIT:ETH-PERPETUAL.vbuy+DERIBIT:ETH_USDC-PERPETUAL.vbuy+DYDX:ETH-USD.vbuy+FTX:ETH-PERP.vbuy+KRAKEN:PI_ETHUSD.vbuy+PHEMEX:ETHUSD.vbuy)\n_vsell = (BINANCE_FUTURES:ethbusd.vsell+BINANCE_FUTURES:ethusd_perp.vsell+BINANCE_FUTURES:ethusdt.vsell+BITFINEX:ETHF0:USTF0.vsell+BITMEX:ETHUSD.vsell+BITMEX:ETHUSDT.vsell+BITMEX:ETH_USDT.vsell+BYBIT:ETHUSD.vsell+BYBIT:ETHUSDT.vsell+DERIBIT:ETH-PERPETUAL.vsell+DERIBIT:ETH_USDC-PERPETUAL.vsell+DYDX:ETH-USD.vsell+FTX:ETH-PERP.vsell+KRAKEN:PI_ETHUSD.vsell+PHEMEX:ETHUSD.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Perps\")",
+          "script": "_vbuy = (BINANCE_FUTURES:ethbusd.vbuy+BINANCE_FUTURES:ethusd_perp.vbuy+BINANCE_FUTURES:ethusdt.vbuy+BITFINEX:ETHF0:USTF0.vbuy+BITMEX:ETHUSD.vbuy+BITMEX:ETHUSDT.vbuy+BITMEX:ETH_USDT.vbuy+BYBIT:ETHUSD.vbuy+BYBIT:ETHUSDT.vbuy+DERIBIT:ETH-PERPETUAL.vbuy+DERIBIT:ETH_USDC-PERPETUAL.vbuy+DYDX:ETH-USD.vbuy+KRAKEN:PI_ETHUSD.vbuy+PHEMEX:ETHUSD.vbuy)\n_vsell = (BINANCE_FUTURES:ethbusd.vsell+BINANCE_FUTURES:ethusd_perp.vsell+BINANCE_FUTURES:ethusdt.vsell+BITFINEX:ETHF0:USTF0.vsell+BITMEX:ETHUSD.vsell+BITMEX:ETHUSDT.vsell+BITMEX:ETH_USDT.vsell+BYBIT:ETHUSD.vsell+BYBIT:ETHUSDT.vsell+DERIBIT:ETH-PERPETUAL.vsell+DERIBIT:ETH_USDC-PERPETUAL.vsell+DYDX:ETH-USD.vsell+KRAKEN:PI_ETHUSD.vsell+PHEMEX:ETHUSD.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta Perps\")",
           "id": "delta-perps",
           "name": "Delta Perps",
           "priceScaleId": "delta-perps",
@@ -847,7 +853,7 @@
           "updatedAt": null,
           "series": [
             "volume",
-            "ootchipw"
+            "0dj8rtr7"
           ],
           "navigationState": {
             "sections": [
@@ -855,52 +861,6 @@
               "colors",
               "scriptOptions",
               "defaultOptions"
-            ],
-            "tab": "#script",
-            "optionsQuery": "",
-            "fontSize": 1
-          }
-        },
-        "allmarkets": {
-          "script": "plotline(BITFINEX:ETHUSD.close, color=transparent, title=Bitfinex.spot)\nplotline(BINANCE:ethusdt.close, color=transparent, title=Binance.spot)\nplotline(OKEX:ETH-USDT.close, color=transparent, title=Okex.spot)\nplotline(KRAKEN:XBT/USD.close, color=transparent, title=Kraken.spot)\nplotline(COINBASE:ETH-USD.close, color=transparent, title=Coinbase.spot)\nplotline(POLONIEX:USDT_ETH.close, color=transparent, title=Poloniex.spot)\nplotline(HUOBI:ethusdt.close, color=transparent, title=Huobi.spot)\nplotline(BITSTAMP:ethusd.close, color=transparent, title=Bitstamp.spot)\nplotline(BITMEX:XBTUSD.close, color=transparent, title=Bitmex.perp)\nplotline(BITFINEX:ETHF0:USTF0.close, color=transparent, title=Bitfinex.perp)\nplotline(OKEX:ETH-USD-SWAP.close, color=transparent, title=Okex.perp)\nplotline(BINANCE_FUTURES:ethusdt.close, color=transparent, title=Binance.perp)\nplotline(BINANCE_FUTURES:ethusd_perp.close, color=transparent, title=Binance.perp)\nplotline(HUOBI:ETH-USD.close, color=transparent, title=Huobi.perp)\nplotline(KRAKEN:PI_XBTUSD.close, color=transparent, title=Kraken.perp)\nplotline(DERIBIT:ETH-PERPETUAL.close, color=transparent, title=Deribit.perp)\nplotline(FTX:ETH-PERP.close, color=transparent, title=Ftx.perp)\nplotline(BYBIT:ETHUSD.close, color=transparent, title=Bybit.perp)",
-          "description": "Multiple markets at once",
-          "name": "All markets",
-          "options": {
-            "priceScaleId": "right",
-            "spotColor": "#81c784",
-            "futuresColor": "#ec407a",
-            "visible": false,
-            "color": "rgba(0,0,0,0)"
-          },
-          "id": "allmarkets",
-          "createdAt": 1648450392186,
-          "updatedAt": 1661521716165,
-          "series": [
-            "allmarkets copy 1",
-            "39kupg1b",
-            "tybcka2d",
-            "3za6ltcc",
-            "p1k8otyo",
-            "gdwln31b",
-            "qgzdtb12",
-            "5u0dxrfp",
-            "rj56ipav",
-            "8r231k2q",
-            "usohkv9t",
-            "vnv7bkea",
-            "ywsyby4u",
-            "sdcp0dr5",
-            "p969g03v",
-            "zw1nx0wq",
-            "6dy3xzz7",
-            "m2116l3v"
-          ],
-          "displayName": "All markets",
-          "unsavedChanges": false,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors"
             ],
             "tab": "#script",
             "optionsQuery": "",
@@ -929,7 +889,7 @@
           },
           "series": [
             "keltner-channel",
-            "5dg3n1i3"
+            "0he146zu"
           ],
           "displayName": "Keltner Channel",
           "unsavedChanges": false,
@@ -940,7 +900,7 @@
               "scriptOptions",
               "colors"
             ],
-            "tab": "#options",
+            "tab": "#script",
             "optionsQuery": "",
             "fontSize": 1
           },
@@ -955,8 +915,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1,
-              "minMove": 0.1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -988,7 +948,7 @@
           "displayName": "Price"
         },
         "cvd-eth-perp": {
-          "script": "_vbuy = (BINANCE_FUTURES:ethbusd.vbuy+BINANCE_FUTURES:ethusd_perp.vbuy+BINANCE_FUTURES:ethusdt.vbuy+BITFINEX:ETHF0:USTF0.vbuy+BITMEX:ETHUSD.vbuy+BITMEX:ETHUSDT.vbuy+BITMEX:ETH_USDT.vbuy+BYBIT:ETHUSD.vbuy+BYBIT:ETHUSDT.vbuy+DERIBIT:ETH-PERPETUAL.vbuy+DERIBIT:ETH_USDC-PERPETUAL.vbuy+DYDX:ETH-USD.vbuy+FTX:ETH-PERP.vbuy+KRAKEN:PI_ETHUSD.vbuy+PHEMEX:ETHUSD.vbuy)\n_vsell = (BINANCE_FUTURES:ethbusd.vsell+BINANCE_FUTURES:ethusd_perp.vsell+BINANCE_FUTURES:ethusdt.vsell+BITFINEX:ETHF0:USTF0.vsell+BITMEX:ETHUSD.vsell+BITMEX:ETHUSDT.vsell+BITMEX:ETH_USDT.vsell+BYBIT:ETHUSD.vsell+BYBIT:ETHUSDT.vsell+DERIBIT:ETH-PERPETUAL.vsell+DERIBIT:ETH_USDC-PERPETUAL.vsell+DYDX:ETH-USD.vsell+FTX:ETH-PERP.vsell+KRAKEN:PI_ETHUSD.vsell+PHEMEX:ETHUSD.vsell)\nline(cum(_vbuy-_vsell), title=PERP)",
+          "script": "_vbuy = (BINANCE_FUTURES:ethbusd.vbuy+BINANCE_FUTURES:ethusd_perp.vbuy+BINANCE_FUTURES:ethusdt.vbuy+BITFINEX:ETHF0:USTF0.vbuy+BITMEX:ETHUSD.vbuy+BITMEX:ETHUSDT.vbuy+BITMEX:ETH_USDT.vbuy+BYBIT:ETHUSD.vbuy+BYBIT:ETHUSDT.vbuy+DERIBIT:ETH-PERPETUAL.vbuy+DERIBIT:ETH_USDC-PERPETUAL.vbuy+DYDX:ETH-USD.vbuy+KRAKEN:PI_ETHUSD.vbuy+PHEMEX:ETHUSD.vbuy)\n_vsell = (BINANCE_FUTURES:ethbusd.vsell+BINANCE_FUTURES:ethusd_perp.vsell+BINANCE_FUTURES:ethusdt.vsell+BITFINEX:ETHF0:USTF0.vsell+BITMEX:ETHUSD.vsell+BITMEX:ETHUSDT.vsell+BITMEX:ETH_USDT.vsell+BYBIT:ETHUSD.vsell+BYBIT:ETHUSDT.vsell+DERIBIT:ETH-PERPETUAL.vsell+DERIBIT:ETH_USDC-PERPETUAL.vsell+DYDX:ETH-USD.vsell+KRAKEN:PI_ETHUSD.vsell+PHEMEX:ETHUSD.vsell)\nline(cum(_vbuy-_vsell), title=PERP)",
           "id": "cvd-eth-perp",
           "name": "CVD ETH Perp",
           "priceScaleId": "cvd-eth-perp",
@@ -1018,7 +978,7 @@
           "updatedAt": 1661522755091
         },
         "cvd-eth-spot copy 1": {
-          "script": "_vbuy = (BINANCE:ethbusd.vbuy+BINANCE:ethusdc.vbuy+BINANCE:ethusdt.vbuy+BITFINEX:ETHUSD.vbuy+BITFINEX:ETHUST.vbuy+BITSTAMP:ethusd.vbuy+BITSTAMP:ethusdc.vbuy+BITSTAMP:ethusdt.vbuy+BYBIT:ETHUSDC-SPOT.vbuy+BYBIT:ETHUSDT-SPOT.vbuy+COINBASE:ETH-USD.vbuy+COINBASE:ETH-USDC.vbuy+COINBASE:ETH-USDT.vbuy+FTX:ETH/USD.vbuy+FTX:ETH/USDT.vbuy+KRAKEN:ETH/USD.vbuy+KRAKEN:ETH/USDC.vbuy+KRAKEN:ETH/USDT.vbuy)\n_vsell = (BINANCE:ethbusd.vsell+BINANCE:ethusdc.vsell+BINANCE:ethusdt.vsell+BITFINEX:ETHUSD.vsell+BITFINEX:ETHUST.vsell+BITSTAMP:ethusd.vsell+BITSTAMP:ethusdc.vsell+BITSTAMP:ethusdt.vsell+BYBIT:ETHUSDC-SPOT.vsell+BYBIT:ETHUSDT-SPOT.vsell+COINBASE:ETH-USD.vsell+COINBASE:ETH-USDC.vsell+COINBASE:ETH-USDT.vsell+FTX:ETH/USD.vsell+FTX:ETH/USDT.vsell+KRAKEN:ETH/USD.vsell+KRAKEN:ETH/USDC.vsell+KRAKEN:ETH/USDT.vsell)\n\nline(cum(_vbuy-_vsell), title=SPOT)",
+          "script": "_vbuy = (BINANCE:ethbusd.vbuy+BINANCE:ethusdc.vbuy+BINANCE:ethusdt.vbuy+BITFINEX:ETHUSD.vbuy+BITFINEX:ETHUST.vbuy+BITSTAMP:ethusd.vbuy+BITSTAMP:ethusdc.vbuy+BITSTAMP:ethusdt.vbuy+BYBIT:ETHUSDC-SPOT.vbuy+BYBIT:ETHUSDT-SPOT.vbuy+COINBASE:ETH-USD.vbuy+COINBASE:ETH-USDC.vbuy+COINBASE:ETH-USDT.vbuy+KRAKEN:ETH/USD.vbuy+KRAKEN:ETH/USDC.vbuy+KRAKEN:ETH/USDT.vbuy)\n_vsell = (BINANCE:ethbusd.vsell+BINANCE:ethusdc.vsell+BINANCE:ethusdt.vsell+BITFINEX:ETHUSD.vsell+BITFINEX:ETHUST.vsell+BITSTAMP:ethusd.vsell+BITSTAMP:ethusdc.vsell+BITSTAMP:ethusdt.vsell+BYBIT:ETHUSDC-SPOT.vsell+BYBIT:ETHUSDT-SPOT.vsell+COINBASE:ETH-USD.vsell+COINBASE:ETH-USDC.vsell+COINBASE:ETH-USDT.vsell+KRAKEN:ETH/USD.vsell+KRAKEN:ETH/USDC.vsell+KRAKEN:ETH/USDT.vsell)\n\nline(cum(_vbuy-_vsell), title=SPOT)",
           "id": "cvd-eth-spot copy 1",
           "name": "CVD ETH Spot",
           "priceScaleId": "cvd-eth-spot",
@@ -1158,15 +1118,6 @@
             "CVD Coinbase"
           ]
         },
-        "cvd-ftx-spot": {
-          "scaleMargins": {
-            "top": 0.44,
-            "bottom": 0.36
-          },
-          "indicators": [
-            "CVD FTX Spot"
-          ]
-        },
         "cvd-bitmex": {
           "scaleMargins": {
             "top": 0.43,
@@ -1174,15 +1125,6 @@
           },
           "indicators": [
             "CVD BitMex"
-          ]
-        },
-        "cvd-ftx-perps": {
-          "scaleMargins": {
-            "top": 0.68,
-            "bottom": 0
-          },
-          "indicators": [
-            "CVD FTX Perps"
           ]
         },
         "cvd-binance-perps": {
@@ -1308,7 +1250,7 @@
         }
       },
       "layouting": false,
-      "timeframe": "300",
+      "timeframe": "60",
       "refreshRate": 1000,
       "showLegend": false,
       "fillGapsWithEmpty": true,
@@ -1320,7 +1262,7 @@
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
       "hiddenMarkets": {},
-      "barSpacing": 2.8866223611577495,
+      "barSpacing": 0.5067151431061491,
       "_id": "chart"
     },
     "stats": {
@@ -1342,7 +1284,7 @@
           "id": "vold",
           "name": "VOLUME Δ",
           "input": "vbuy - vsell",
-          "enabled": false,
+          "enabled": true,
           "color": "#40d745",
           "type": "area",
           "conditionnalColor": false
@@ -1569,8 +1511,8 @@
             "priceScaleId": "right",
             "priceFormat": {
               "auto": true,
-              "precision": 1,
-              "minMove": 0.1
+              "precision": 2,
+              "minMove": 0.01
             },
             "priceLineVisible": false,
             "lastValueVisible": true,
@@ -1705,74 +1647,6 @@
             "fontSize": 1
           }
         },
-        "delta-ftx-spot": {
-          "script": "_vbuy = (FTX:ETH/USD.vbuy+FTX:ETH/USDT.vbuy)\n_vsell = (FTX:ETH/USD.vsell+FTX:ETH/USDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"FTX Spot\")",
-          "id": "delta-ftx-spot",
-          "name": "Delta FTX Spot",
-          "priceScaleId": "delta-ftx-spot",
-          "options": {
-            "priceScaleId": "delta-ftx-spot",
-            "upColor": "rgb(100,181,246)",
-            "downColor": "rgb(233,30,99)",
-            "visible": true,
-            "upColorHighVol": "rgb(100,181,246)",
-            "upColorLowVol": "rgb(10,96,162)",
-            "downColorHighVol": "rgb(240,98,146)",
-            "downColorLowVol": "rgb(194,24,91)",
-            "length": 7
-          },
-          "series": [
-            "delta-ftx-spot"
-          ],
-          "displayName": "Delta FTX Spot",
-          "unsavedChanges": true,
-          "createdAt": 1649329380832,
-          "updatedAt": 1661521069792,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors",
-              "scriptOptions"
-            ],
-            "tab": "#script",
-            "optionsQuery": "",
-            "fontSize": 1
-          }
-        },
-        "delta-ftx-perps": {
-          "script": "_vbuy = (FTX:ETH-PERP.vbuy)\n_vsell = (FTX:ETH-PERP.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"FTX Perp\")",
-          "id": "delta-ftx-perps",
-          "name": "Delta FTX Perps",
-          "priceScaleId": "delta-ftx-perps",
-          "options": {
-            "priceScaleId": "delta-ftx-perps",
-            "upColor": "rgb(100,181,246)",
-            "downColor": "rgb(233,30,99)",
-            "visible": true,
-            "upColorHighVol": "rgb(100,181,246)",
-            "upColorLowVol": "rgb(10,96,162)",
-            "downColorHighVol": "rgb(240,98,146)",
-            "downColorLowVol": "rgb(194,24,91)",
-            "length": 7
-          },
-          "series": [
-            "delta-ftx-perps"
-          ],
-          "displayName": "Delta FTX Perps",
-          "unsavedChanges": false,
-          "createdAt": 1649330299391,
-          "updatedAt": 1661521268327,
-          "navigationState": {
-            "sections": [
-              "position",
-              "colors",
-              "scriptOptions"
-            ],
-            "tab": "#script",
-            "optionsQuery": "",
-            "fontSize": 1
-          }
-        },
         "delta-bitfinex-spot": {
           "script": "_vbuy = (BITFINEX:ETHUSD.vbuy+BITFINEX:ETHUST.vbuy)\n_vsell = (BITFINEX:ETHUSD.vsell+BITFINEX:ETHUST.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Bitfinex Spot\")",
           "id": "delta-bitfinex-spot",
@@ -1860,7 +1734,7 @@
           "uses": 2,
           "series": [
             "liquidations",
-            "vd51nvb0"
+            "rwbuyo81"
           ],
           "displayName": "Liquidations"
         },
@@ -1893,6 +1767,74 @@
             "fontSize": 1
           },
           "updatedAt": 1661521101300
+        },
+        "delta-phemex-spot": {
+          "script": "_vbuy = (PHEMEX:ETHUSDT.vbuy+PHEMEX:ETHUSDT.vbuy)\n_vsell = (PHEMEX:ETHUSDT.vsell+PHEMEX:ETHUSDT.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Phemex Spot\")",
+          "id": "delta-phemex-spot",
+          "name": "Delta Phemex Spot",
+          "priceScaleId": "delta-phemex-spot",
+          "options": {
+            "priceScaleId": "delta-phemex-spot",
+            "upColor": "rgb(100,181,246)",
+            "downColor": "rgb(233,30,99)",
+            "visible": false,
+            "upColorHighVol": "rgb(100,181,246)",
+            "upColorLowVol": "rgb(10,96,162)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
+          },
+          "series": [
+            "delta-phemex-spot copy 2"
+          ],
+          "displayName": "Delta Phemex Spot",
+          "unsavedChanges": false,
+          "createdAt": 1649329380832,
+          "updatedAt": 1668674633751,
+          "navigationState": {
+            "sections": [
+              "position",
+              "colors",
+              "scriptOptions"
+            ],
+            "tab": "#script",
+            "optionsQuery": "",
+            "fontSize": 1
+          }
+        },
+        "delta-phemex-perps": {
+          "script": "_vbuy = (PHEMEX:ETHUSDT.vbuy+PHEMEX:ETHUSD.vbuy)\n_vsell = (PHEMEX:ETHUSDT.vsell+PHEMEX:ETHUSD.vsell)\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Phemex Perp\")",
+          "id": "delta-phemex-perps",
+          "name": "Delta Phemex Perps",
+          "priceScaleId": "delta-phemex-perps",
+          "options": {
+            "priceScaleId": "delta-phemex-perps",
+            "upColor": "rgb(100,181,246)",
+            "downColor": "rgb(233,30,99)",
+            "visible": true,
+            "upColorHighVol": "rgb(100,181,246)",
+            "upColorLowVol": "rgb(10,96,162)",
+            "downColorHighVol": "rgb(240,98,146)",
+            "downColorLowVol": "rgb(194,24,91)",
+            "length": 7
+          },
+          "series": [
+            "delta-phemex-perps"
+          ],
+          "displayName": "Delta Phemex Perps",
+          "unsavedChanges": false,
+          "createdAt": 1649330299391,
+          "updatedAt": 1668674767290,
+          "navigationState": {
+            "sections": [
+              "position",
+              "colors",
+              "scriptOptions"
+            ],
+            "tab": "#script",
+            "optionsQuery": "",
+            "fontSize": 1
+          }
         }
       },
       "priceScales": {
@@ -1907,7 +1849,7 @@
         },
         "volume_liquidations": {
           "scaleMargins": {
-            "top": 0.9,
+            "top": 0.89,
             "bottom": 0.01
           },
           "indicators": [
@@ -1923,7 +1865,7 @@
         "delta-binance-spot": {
           "scaleMargins": {
             "top": 0.17,
-            "bottom": 0.74
+            "bottom": 0.73
           },
           "indicators": [
             "Delta Binance Spot"
@@ -1937,8 +1879,8 @@
         },
         "delta-coinbase": {
           "scaleMargins": {
-            "top": 0.26,
-            "bottom": 0.65
+            "top": 0.27,
+            "bottom": 0.63
           },
           "indicators": [
             "Delta Coinbase"
@@ -1946,7 +1888,7 @@
         },
         "delta-bybit-perps": {
           "scaleMargins": {
-            "top": 0.8,
+            "top": 0.79,
             "bottom": 0.11
           },
           "indicators": [
@@ -1962,28 +1904,28 @@
             "Delta BitMex"
           ]
         },
-        "delta-ftx-spot": {
+        "delta-phemex-spot": {
           "scaleMargins": {
             "top": 0.44,
             "bottom": 0.47
           },
           "indicators": [
-            "Delta FTX Spot"
+            "Delta Phemex Spot"
           ]
         },
-        "delta-ftx-perps": {
+        "delta-phemex-perps": {
           "scaleMargins": {
-            "top": 0.71,
-            "bottom": 0.2
+            "top": 0.69,
+            "bottom": 0.21
           },
           "indicators": [
-            "Delta FTX Perps"
+            "Delta Phemex Perps"
           ]
         },
         "delta-bitfinex-spot": {
           "scaleMargins": {
-            "top": 0.35,
-            "bottom": 0.56
+            "top": 0.37,
+            "bottom": 0.53
           },
           "indicators": [
             "Delta BitFinex Spot"
@@ -1991,8 +1933,8 @@
         },
         "delta-binance-perps": {
           "scaleMargins": {
-            "top": 0.62,
-            "bottom": 0.29
+            "top": 0.59,
+            "bottom": 0.31
           },
           "indicators": [
             "Delta Binance Perps"
@@ -2024,8 +1966,8 @@
         },
         "delta-bybit-spot": {
           "scaleMargins": {
-            "top": 0.53,
-            "bottom": 0.38
+            "top": 0.47,
+            "bottom": 0.43
           },
           "indicators": [
             "Delta Bybit Spot"
@@ -2044,8 +1986,37 @@
       "verticalGridlinesColor": "rgba(255,255,255,.1)",
       "showWatermark": false,
       "watermarkColor": "rgba(255,255,255,.1)",
-      "hiddenMarkets": {},
-      "barSpacing": 3.0911180084113634,
+      "hiddenMarkets": {
+        "BINANCE:ethusdt": false,
+        "BITFINEX:ETHUSD": false,
+        "BITFINEX:ETHUST": false,
+        "BITSTAMP:ethusd": false,
+        "BITSTAMP:ethusdc": false,
+        "BITSTAMP:ethusdt": false,
+        "BYBIT:ETHUSDC-SPOT": false,
+        "BYBIT:ETHUSDT-SPOT": false,
+        "COINBASE:ETH-USD": false,
+        "COINBASE:ETH-USDC": false,
+        "COINBASE:ETH-USDT": false,
+        "KRAKEN:ETH/USD": false,
+        "KRAKEN:ETH/USDC": false,
+        "KRAKEN:ETH/USDT": false,
+        "BINANCE_FUTURES:ethusd_perp": false,
+        "BINANCE_FUTURES:ethusdt": false,
+        "BITFINEX:ETHF0:USTF0": false,
+        "BITMEX:ETH_USDT": false,
+        "BITMEX:ETHUSD": false,
+        "BITMEX:ETHUSDT": false,
+        "BYBIT:ETHUSD": false,
+        "BYBIT:ETHUSDT": false,
+        "DERIBIT:ETH_USDC-PERPETUAL": false,
+        "DERIBIT:ETH-PERPETUAL": false,
+        "DYDX:ETH-USD": false,
+        "KRAKEN:PI_ETHUSD": false,
+        "PHEMEX:ETHUSD": false,
+        "PHEMEX:ETHUSDT": false
+      },
+      "barSpacing": 3.0613468269411874,
       "_id": "chart8"
     },
     "stats2": {
