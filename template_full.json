@@ -1045,7 +1045,7 @@
         "thresholds": [
           {
             "id": "threshold",
-            "amount": 1,
+            "amount": 1000,
             "buyColor": "rgb(0,19,20)",
             "sellColor": "rgb(30,0,15)",
             "buyAudio": "play(659.26, gain / 10, 0.1 + gain / 7)",
@@ -1140,7 +1140,7 @@
         "thresholds": [
           {
             "id": "threshold",
-            "amount": 1,
+            "amount": 1000,
             "buyColor": "rgb(0,19,20)",
             "sellColor": "rgb(30,0,15)",
             "buyAudio": "play(659.26, gain / 10, 0.1 + gain / 7)",
