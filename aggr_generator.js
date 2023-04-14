@@ -202,6 +202,9 @@ for (const symbol of Object.keys(marketsBySymbol).filter(m => !['USDT'].includes
     const basis = getBasis(m);
     const spotFlatMarkets = marketsBySymbol[symbol].spot.map(m => m.id);
     const perpFlatMarkets = marketsBySymbol[symbol].perp.map(m => m.id);
+    if (!spotFlatMarkets.length) console.log(`No spot markets for ${symbol}`)
+    if (!perpFlatMarkets.length) console.log(`No perp markets for ${symbol}`)
+    if (!spotFlatMarkets.length || !perpFlatMarkets.length) continue;
     const flattenedMarkets = [...spotFlatMarkets, ...perpFlatMarkets];
     const temp = getTemplate(templates[type], type, symbol, flattenedMarkets, spotFlatMarkets, perpFlatMarkets, cvdSpot, cvdPerp, deltaSpot, deltaPerp, basis);
     fs.writeFile(`./templates/${type}/Rife${symbol}-${type}.json`, JSON.stringify(temp), 'utf8', err => {
