@@ -157,6 +157,8 @@ function getTemplate(template, type, symbol, markets, spotFlatMarkets, perpFlatM
     template.states.panes.panes.trades.markets = perpFlatMarkets
     template.states.panes.panes.trades2.markets = spotFlatMarkets
   }
+  if (type === 'full')
+    template.states.panes.panes.trades3.markets = perpFlatMarkets
   return template;
 }
 
