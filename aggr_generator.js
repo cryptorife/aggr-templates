@@ -165,7 +165,7 @@ function getTemplate(template, type, symbol, markets, spotFlatMarkets, perpFlatM
 const getCvd = (market, type) => {
   const vbuy = market[type].map(m => m.id).join(".vbuy+") + ".vbuy";
   const vsell = market[type].map(m => m.id).join(".vsell+") + ".vsell";
-  return `_vbuy=(${vbuy})\n_vsell=(${vsell})\nline(cum(_vbuy-_vsell), title=SPOT)`
+  return `_vbuy=(${vbuy})\n_vsell=(${vsell})\nline(cum(_vbuy-_vsell), title=${type})`
 }
 
 getBasis = (market) => {
