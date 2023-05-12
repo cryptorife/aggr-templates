@@ -3,7 +3,7 @@ templates for aggr.trade by @cryptorife
 
 ## v1.0.0
 
-![v1.0.0](https://github.com/cryptorife/master/blob/master/v1.0.0.jpg?raw=true)
+![v1.0.0](https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v1.0.0.jpg)
 
 ## v1.3.1
 
