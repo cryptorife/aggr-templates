@@ -1,8 +1,8 @@
 # aggr-templates
 templates for aggr.trade by @cryptorife
 
-click on the version to download
-templates might get outdated; you might need to update it's 'sources'
+- click on the version to download
+- templates might get outdated; you might need to update it's 'sources'
 
 ## [v1.0.0](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v1.0.0.zip)
 
