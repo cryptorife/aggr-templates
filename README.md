@@ -1,17 +1,20 @@
 # aggr-templates
 templates for aggr.trade by @cryptorife
 
+click on the version to download
+templates might get outdated; you might need to update it's 'sources'
+
 ## [v1.0.0](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v1.0.0.zip)
 
 ![v1.0.0](https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v1.0.0.jpg)
 
-## v1.3.1
+## [v1.3.1](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v1.3.1.zip)
 
 Leaned down version, includes chart for ETH
 
 ![v1.3.1](https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v1.3.1.jpg)
 
-## v2.0.1
+## [v2.0.1](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v2.0.1.zip)
 
 Automatically generated templates for all available symbols
 
