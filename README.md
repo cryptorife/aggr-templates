@@ -1,7 +1,7 @@
 # aggr-templates
 templates for aggr.trade by @cryptorife
 
-## v1.0.0
+## [v1.0.0](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v1.0.0.zip)
 
 ![v1.0.0](https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v1.0.0.jpg)
 
