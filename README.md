@@ -41,6 +41,10 @@ I hope this are useful to you!
 
 ## Older Versions
 
+### [v2.1.0](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v2.1.0.zip)
+
+First version with automatically generated templates for all available symbols
+
 ### [v1.3.1](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v1.3.1.zip)
 
 Leaned down version, includes chart for ETH
