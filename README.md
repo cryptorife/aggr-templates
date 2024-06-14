@@ -16,7 +16,7 @@ v2.1 got popular, thus decided to keep it alive, just making sure the data feed 
 Full, Chart or Tape?
 
 ### Full
-<img src="https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v2.0.1-full.png" width="800" />
+<img src="https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v2.0.1-full.jpg" width="800" />
 
 ### Chart
 <img src="https://github.com/cryptorife/aggr-templates/blob/master/screenshots/v2.0.1-chart.jpg" width="800" />
