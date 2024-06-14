@@ -1,21 +1,55 @@
 const fs = require('fs')
-const {markets} = require('./markets.json')
-const template_chart = require("./template_chart.json")
+const markets = require('./markets.json')
+// const template_chart = require("./template_chart.json")
 const template_full = require("./template_full.json")
 const template_tape = require("./template_tape.json")
 
 const templates = {
-  chart: template_chart,
+  // chart: template_chart,
   full: template_full,
   tape: template_tape
 }
+
+const colors = {
+  'BINANCE': 'rgb(255,152,0)',
+  'BINANCE-FUTURES': 'rgba(255,205,81,0.75)',
+  // 'BITFINEX': 'rgba(8,153,129,0.75)', BTFINEX source is fugged needs fix TODO
+  'BYBIT': 'rgb(255,235,59)',
+  'COINBASE': 'rgba(41,98,255,0.75)',
+  'DERIBIT': 'rgba(112,204,189,0.75)',
+  'OKX': 'rgba(93,96,107,0.75)'
+}
+
+const cvdExchangeIndicator = (name, script) => ({
+  "id": `cvd-exchange-${name}`,
+  "libraryId": `cvd-exchange-${name}`,
+  "name": `cvd-exchange-${name}`,
+  "script": script,
+  "createdAt": 1716531496274,
+  "updatedAt": 1716531534751,
+  "options": {
+    "priceScaleId": `cvd-exchange-${name}`,
+    "scaleMargins": {
+      "top": 0.74,
+      "bottom": 0.03
+    },
+    "color": colors[name],
+    "visible": true
+  },
+  "optionsDefinitions": {},
+  "series": [
+    "cvd-exchange"
+  ],
+  "displayName": `CVD Exchange ${name}`,
+  "unsavedChanges": false
+})
 
 const baseQuoteLookupKnown = new RegExp(
     `^([A-Z0-9]{3,})[-/:]?(USDT|USDC|TUSD|BUSD)$|^([A-Z0-9]{2,})[-/:]?(UST|EUR|USD)$`
   )
 
 const baseQuoteLookupOthers = new RegExp(`^([A-Z0-9]{2,})[-/]?([A-Z0-9]{3,})$`)
-const baseQuoteLookupPoloniex = new RegExp(`^(.*)_(.*)$`)
+// const baseQuoteLookupPoloniex = new RegExp(`^(.*)_(.*)$`)
 
 function getMarketProduct(exchangeId, symbol, noStable) {
     const id = exchangeId + ':' + symbol
@@ -56,8 +90,6 @@ function getMarketProduct(exchangeId, symbol, noStable) {
       localSymbol = localSymbol.replace(/-SPOT$/, '')
     } else if (exchangeId === 'KRAKEN') {
       localSymbol = localSymbol.replace(/PI_/, '').replace(/FI_/, '')
-    } else if (exchangeId === 'FTX' && type === 'future') {
-      localSymbol = localSymbol.replace(/(\w+)-\d+$/, '$1-USD')
     } else if (exchangeId === 'BITFINEX') {
       localSymbol = localSymbol
         .replace(/(.*)F0:(\w+)F0/, '$1-$2')
@@ -77,29 +109,14 @@ function getMarketProduct(exchangeId, symbol, noStable) {
   
     let localSymbolAlpha = localSymbol.replace(/[-_/:]/, '')
   
-    let match
-  
-    if (exchangeId === 'POLONIEX') {
-      match = symbol.match(baseQuoteLookupPoloniex)
-  
-      if (match) {
-        match[0] = match[2]
-        match[2] = match[1]
-        match[1] = match[0]
-  
-        localSymbolAlpha = match[1] + match[2]
-      }
-    } else {
-      match = localSymbol.match(baseQuoteLookupKnown)
-  
-      if (!match) {
-        match = localSymbolAlpha.match(baseQuoteLookupOthers)
-      }
+    let match = localSymbol.match(baseQuoteLookupKnown)
+    if (!match) {
+      match = localSymbolAlpha.match(baseQuoteLookupOthers)
     }
   
     if (
       !match &&
-      (exchangeId === 'DERIBIT' || exchangeId === 'FTX' || exchangeId === 'HUOBI')
+      (exchangeId === 'DERIBIT' || exchangeId === 'HUOBI')
     ) {
       match = localSymbolAlpha.match(/(\w+)[^a-z0-9]/i)
   
@@ -138,18 +155,22 @@ function getMarketProduct(exchangeId, symbol, noStable) {
     }
   }
 
-function getTemplate(template, type, symbol, markets, spotFlatMarkets, perpFlatMarkets, cvdSpot, cvdPerp, deltaSpot, deltaPerp, basis) {
+
+// expects symbol e.g. 'BINANCE:BTUCSDT'
+const getCvd = (symbols, title) => {
+  const vbuy = symbols.join(".vbuy+") + ".vbuy";
+  const vsell = symbols.join(".vsell+") + ".vsell";
+  return `_vbuy=(${vbuy})\n_vsell=(${vsell})\nline(cum(_vbuy-_vsell), title=${title})`
+}
+
+function getTemplate(template, type, symbol, markets, spotFlatMarkets, perpFlatMarkets) {
   const title = `Rife${symbol} ${type}`;
   const id = `rife${symbol}${type}_v` + Date.now()
   template.name = title;
   template.id = id + Date.now()
   if (type !== 'tape') {
     template.states.panes.panes.chart.markets = markets;
-    template.states.chart.indicators["cvd-spot"].script = cvdSpot
-    template.states.chart.indicators["cvd-perp"].script = cvdPerp
-    template.states.chart.indicators["delta-spot"].script = deltaSpot
-    template.states.chart.indicators["delta-perp"].script = deltaPerp
-    template.states.chart.indicators["basis"].script = basis
+    template.states.panes.panes.chart2.markets = markets;
   }
   if (type !== 'chart') {
     template.states.panes.panes.stats.markets = perpFlatMarkets
@@ -157,27 +178,22 @@ function getTemplate(template, type, symbol, markets, spotFlatMarkets, perpFlatM
     template.states.panes.panes.trades.markets = perpFlatMarkets
     template.states.panes.panes.trades2.markets = spotFlatMarkets
   }
-  if (type === 'full')
-    template.states.panes.panes.trades3.markets = perpFlatMarkets
+  if (type === 'full') {
+      template.states.panes.panes.trades3.markets = perpFlatMarkets
+      const exchanges = {};
+      for (const market of markets) {
+        const exchange = market.split(':')[0];
+        if (exchanges[exchange] === undefined) exchanges[exchange] = [];
+        exchanges[exchange].push(market);
+      }
+      for (const key of ['BINANCE', 'BINANCE_FUTURES', 'BYBIT', 'COINBASE', 'OKX', 'DERIBIT']) {
+        if (exchanges[key]  === undefined) continue;
+        const cvd = getCvd(exchanges[key], key);
+        template.states.chart2.indicators[`cvd-exchange-${key}`] = cvdExchangeIndicator(key, cvd);
+        template.states.chart2.priceScales[`cvd-exchange-${key}`] = { scaleMargins: {top: 0.79, bottom: 0.03}};
+      }
+    }
   return template;
-}
-
-const getCvd = (market, type) => {
-  const vbuy = market[type].map(m => m.id).join(".vbuy+") + ".vbuy";
-  const vsell = market[type].map(m => m.id).join(".vsell+") + ".vsell";
-  return `_vbuy=(${vbuy})\n_vsell=(${vsell})\nline(cum(_vbuy-_vsell), title=${type})`
-}
-
-getBasis = (market) => {
-  const spot = market.spot.map(m => m.id);
-  const perp = market.perp.map(m => m.id);
-  return `spot=(${spot.join(".close+")}.close)/${spot.length}\nperp=(${perp.join(".close+")}.close)/${perp.length}\nd = spot-perp\n\ncloudarea(d, 0, title=Basis)`
-}
-
-getDelta = (market, type) => {
-  const vbuy = market[type].map(m => m.id).join(".vbuy+") + ".vbuy";
-  const vsell = market[type].map(m => m.id).join(".vsell+") + ".vsell";
-  return `_vbuy=(${vbuy})\n_vsell=(${vsell})\n\nvolume = _vbuy+_vsell\na = sma(Math.pow(volume,2),options.length)\nb = Math.pow(sum(volume,options.length),2)/Math.pow(options.length,2)\nstdev = Math.sqrt(a - b)\nbasis = sma(volume, options.length)\ndev = 1 * stdev\ntreshold = basis + dev\n\ndelta = _vbuy - _vsell\n\nplothistogram({ time: time, value: (delta), color: delta > 0 ? ( volume > treshold ? options.upColorHighVol : options.upColorLowVol) : ( volume > treshold ? options.downColorHighVol : options.downColorLowVol)}, title=\"Delta ${type}\")`
 }
 
 const marketsBySymbol = {};
@@ -185,6 +201,8 @@ for (const market of markets) {
   [exchange, symbol] = market.split(':');
   if (exchange === 'FTX') continue;
   const m = getMarketProduct(exchange, symbol)
+  // if (exchange === 'BITFINEX' && symbol === 'DOGE') 
+    // console.log(m);
   if (m.type === 'future') continue;
   if (m.quote === undefined || m.quote.indexOf('USD') === -1) continue;
   if (marketsBySymbol[m.base] === undefined) marketsBySymbol[m.base] = {spot: [], perp: []};
@@ -192,26 +210,18 @@ for (const market of markets) {
 }
 
 for (const symbol of Object.keys(marketsBySymbol).filter(m => !['USDT'].includes(m))) {
-  const types = ["chart", "full", "tape", ];
+  const types = Object.keys(templates);
   for (const type of types) {
     const m = marketsBySymbol[symbol];
-    const cvdSpot = getCvd(m, 'spot');
-    const cvdPerp = getCvd(m, 'perp');
-    const deltaSpot = getDelta(m, 'spot');
-    const deltaPerp = getDelta(m, 'perp');
-    const basis = getBasis(m);
     const spotFlatMarkets = marketsBySymbol[symbol].spot.map(m => m.id);
     const perpFlatMarkets = marketsBySymbol[symbol].perp.map(m => m.id);
     if (!spotFlatMarkets.length) console.log(`No spot markets for ${symbol}`)
     if (!perpFlatMarkets.length) console.log(`No perp markets for ${symbol}`)
     if (!spotFlatMarkets.length || !perpFlatMarkets.length) continue;
     const flattenedMarkets = [...spotFlatMarkets, ...perpFlatMarkets];
-    const temp = getTemplate(templates[type], type, symbol, flattenedMarkets, spotFlatMarkets, perpFlatMarkets, cvdSpot, cvdPerp, deltaSpot, deltaPerp, basis);
-    fs.writeFile(`./templates/${type}/Rife${symbol}-${type}.json`, JSON.stringify(temp), 'utf8', err => {
+    const temp = getTemplate(templates[type], type, symbol, flattenedMarkets, spotFlatMarkets, perpFlatMarkets);
+    fs.writeFile(`./templates/Rife${symbol}-${type}.json`, JSON.stringify(temp), 'utf8', err => {
       if (err) console.log('error', err)
     })
   }
 }
-
-
-

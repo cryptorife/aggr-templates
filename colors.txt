@@ -1,0 +1,25 @@
+buy dark = rgb(0,19,20)
+buy light-dark = rgb(10,85,142)
+buy light-mid = rgb(16,133,222)
+buy light = rgb(100,181,246)
+
+sell dark = rgb(30,0,15)
+sell light-dark = rgb(65,0,33)
+sell light-mid = rgb(127,0,63)
+sell light = rgb(236,64,122) 
+
+buy high vol = rgb(100,181,246)
+buy low vol = rgb(10,96,162)
+sell high vol = rgb(240,98,146)
+sell low vol = rgb(194,24,91)
+
+cvd spot = rgba(100,181,246,0.77)
+cvd perp = rgba(240,98,146,0.79)
+
+---
+
+default buy blue = rgb(41,98,255)
+default sell red = rgb(233,30,99)
+
+default buy blue light = rgb(126,160,255)
+default sell red light = rgb(254,119,164)
