@@ -1,0 +1,19 @@
+{
+  "name": "aggr-templates",
+  "version": "2.2.3",
+  "description": "aggr templates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cryptorife/aggr-templates.git"
+  },
+  "keywords": [
+    "aggr",
+    "templates"
+  ],
+  "author": "cryptorife",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/cryptorife/aggr-templates/issues"
+  },
+  "homepage": "https://github.com/cryptorife/aggr-templates#readme"
+}
