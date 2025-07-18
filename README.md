@@ -1,7 +1,16 @@
 # aggr-templates
 templates for [aggr.trade](https://aggr.trade) by @cryptorife
 
-## LATEST: [v2.2.4 (click here to download)](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v2.2.4.zip)
+## LATEST: [v2.2.5 (click here to download)](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v2.2.5.zip)
+
+- Adds Hyperliquid exchange
+- Removes delisted assets
+   - Aggr.trade backend does not support all previous assets anymore, only ["top 10 shitcoins"](https://discord.com/channels/1110160121813803058/1110486295802806383/1371059199219466250)
+- Updates remaining templates for the following assets: BTC, ETH, BNB, DOGE, ADA, AVAX, HBAR, HYPE, LINK, LTC, SHIB, SOL, SUI, TON, TRX, XLM, XRP
+
+Note: I only make these templates, I do not have any control of the backend. Any related iniquiries should be done in the Aggr discord, not to me.
+
+## [v2.2.4](https://github.com/cryptorife/aggr-templates/archive/refs/tags/v2.2.4.zip)
 
 <img src="https://raw.githubusercontent.com/cryptorife/aggr-templates/master/screenshots/v2.2-full.png" width="800" />
 
